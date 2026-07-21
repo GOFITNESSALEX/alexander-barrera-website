@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html><head>
+<script>window.__resources = {"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"assets/556e9774-ca76-4e93-8dec-b3c17f5421d7.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"assets/be18ed52-365b-4950-b653-af4ec6f6d49c.js"};</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="assets/5270241a-283b-4a0f-b8de-b8af96ce818c.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/c8cad5dc-3fe0-4dc6-95e3-dd71b1218381.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/494cbfc7-5151-4ec7-a6a8-9292460ccb95.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Anton';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/f0f3891f-bc5c-492e-8f3d-624b806a768d.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/020ab47e-35e5-46c4-bb06-28dedf4bfb3d.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/981605d7-25ef-4fd2-8202-174330a275a0.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/7eaea690-7bda-451f-a22d-ce25bd4f1105.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/00691c3c-9e75-44ae-9acc-a7821bd33393.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/132ca51e-1046-48c7-9c58-130720997269.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/2c6c22ad-fe76-4fcc-9d2b-3c51e277ad6f.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/e414a195-6098-41c2-b219-c28b3b011bf5.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/f6629ef7-c7b2-422a-9cce-f4c51135b5a1.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/096a7788-77c2-4624-8b40-299f1aacf649.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/d754dd09-9e20-4365-b733-13abd6f8c57f.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/702e7648-4ec7-4f76-9713-cb8c8f22bd2a.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Barlow Semi Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/3e7a053a-716e-42f9-845e-9493b02ea504.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<link rel="icon" type="image/png" href="assets/15f820f8-810e-4522-9963-91e37d3da817.png">
+<title>Alexander Barrera — Coaching for Men</title>
+<meta name="description" content="Online fitness coaching for men. Train 1:1 with a real training partner, not an app — build a strong, lean body with weekly live sessions and true accountability.">
+<meta name="author" content="Alexander Barrera">
+<meta name="theme-color" content="#ef5f28">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alexander Barrera — Coaching for Men">
+<meta property="og:description" content="1:1 online coaching for men. A real training partner, not an app — weekly live sessions, true accountability, real results.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alexander Barrera — Coaching for Men">
+<meta name="twitter:description" content="1:1 online coaching for men. A real training partner, not an app — weekly live sessions, true accountability, real results.">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fdfbf7; }
+  html, body { overflow-x: hidden; }
+  ::selection { background: #ef5f28; color: #fff; }
+  html { scroll-behavior: smooth; }
+  [id] { scroll-margin-top: 84px; }
+  h1, h2 { overflow-wrap: break-word; }
+  img { max-width: 100%; }
+  html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+  a, button { transition: transform .18s ease, box-shadow .25s ease, background-color .2s ease, color .18s ease, border-color .2s ease; }
+  a[href="#apply"]:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(239,95,40,.32) !important; }
+  a[href="#apply"]:active { transform: translateY(0); }
+  a[href="#results"]:hover { color: #ef5f28 !important; border-bottom-color: #ef5f28 !important; }
+  .navbar { box-shadow: 0 2px 22px rgba(120,90,50,.05); }
+  .navlink { position: relative; }
+  .navlink::after { content:''; position:absolute; left:0; bottom:-5px; height:2px; width:0; background:#ef5f28; transition:width .25s ease; }
+  .navlink:hover { color:#201a15 !important; }
+  .navlink:hover::after { width:100%; }
+  .pcard, .qcard { box-shadow: 0 2px 12px rgba(120,90,50,.05); transition: transform .22s ease, box-shadow .22s ease; }
+  .tcard { transition: transform .22s ease, box-shadow .22s ease; }
+  .pcard:hover, .qcard:hover, .tcard:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(120,90,50,.14) !important; }
+  .faq-item { transition: border-color .2s ease, box-shadow .22s ease; box-shadow: 0 2px 10px rgba(120,90,50,.04); }
+  .faq-item:hover { border-color: #e4b7a6; box-shadow: 0 10px 26px rgba(120,90,50,.1); }
+  .faq-ico { transition: transform .3s ease, background-color .2s ease, color .2s ease, border-color .2s ease; }
+  .faq-item.open .faq-ico { transform: rotate(135deg); background:#ef5f28; color:#fff; border-color:#ef5f28; }
+  .faq-ans { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .32s cubic-bezier(.2,.7,.2,1), opacity .3s ease; }
+  .faq-item.open .faq-ans { grid-template-rows: 1fr; opacity: 1; }
+  .gallery-row { scrollbar-width: none; -ms-overflow-style: none; }
+  .gallery-row::-webkit-scrollbar { display: none; }
+  .gallery-tile { transition: transform .22s ease, box-shadow .22s ease; }
+  .gallery-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(120,90,50,.18) !important; }
+  .gallery-arrow:hover { background: #ef5f28 !important; color: #fff !important; border-color: #ef5f28 !important; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid #0037a1; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { a[href="#apply"]:hover, .pcard:hover, .qcard:hover, .tcard:hover { transform:none !important; } .faq-ans, .faq-ico { transition:none !important; } }
+  @media (max-width: 860px) {
+    .col2 { grid-template-columns: 1fr !important; }
+    .col4 { grid-template-columns: 1fr 1fr !important; }
+    .hh1 { font-size: 13vw !important; }
+    .statrow { flex-wrap: wrap !important; justify-content: center !important; gap: 22px 34px !important; }
+    .statdiv { display: none !important; }
+    .methodline { display: none !important; }
+  }
+  @media (max-width: 560px) {
+    .col3, .col4 { grid-template-columns: 1fr !important; }
+    .navlink { display: none !important; }
+    .navbar { padding-left: 16px !important; padding-right: 16px !important; }
+    .navmark { font-size: 18px !important; }
+    .navcta { gap: 12px !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Barlow Semi Condensed',sans-serif; color:#201a15; background:#fdfbf7;">
+
+  
+
+  <noscript>
+    <div style="max-width:760px; margin:0 auto; padding:72px 24px; font-family:'Barlow Semi Condensed',sans-serif; color:#201a15; text-align:center;">
+      <h1 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 14px;">ALEXANDER BARRERA</h1>
+      <p style="font-size:18px; line-height:1.55; color:#5c5348; margin:0 0 24px;">Online coaching for men. I'm a natural bodybuilder and coach helping you build a strong, lean body with personalized training, nutrition, and real weekly accountability over Zoom — a training partner, not an app.</p>
+      <p style="font-size:15px; text-transform:uppercase; letter-spacing:.14em; color:#ef5f28; margin:0 0 10px;">Apply or ask a question</p>
+      <p style="font-size:17px; line-height:1.9; margin:0;">
+        WhatsApp: <a href="https://wa.me/584123139890" style="color:#ef5f28; font-weight:700;">+58 412-3139890</a><br>
+        Instagram: <a href="https://instagram.com/soyalexanderbarrera" style="color:#ef5f28; font-weight:700;">@soyalexanderbarrera</a><br>
+        Email: <a href="mailto:ajbzfit@gmail.com" style="color:#ef5f28; font-weight:700;">ajbzfit@gmail.com</a>
+      </p>
+    </div>
+  </noscript>
+
+  <!-- nav -->
+  <div class="navbar" style="position:sticky; top:0; z-index:20; display:flex; align-items:center; justify-content:space-between; padding:16px 44px; background:rgba(253,251,247,.82); backdrop-filter:blur(10px); border-bottom:1px solid #ece4d6; border-top:3px solid #ef5f28; border-image:linear-gradient(90deg,#ffcf00 0 33.33%,#0037a1 33.33% 66.66%,#cf142b 66.66% 100%) 1;">
+    <div class="navmark" style="display:flex; align-items:center; gap:9px; font-family:'Anton',sans-serif; font-size:25px; line-height:.8; letter-spacing:-.01em;">
+      <span style="color:#201a15;">ALEXANDER</span>
+      <div style="width:9px; height:27px; background:linear-gradient(180deg,#ffcf00 0 33.33%,#0037a1 33.33% 66.66%,#cf142b 66.66% 100%); transform:skewX(-20deg); border-radius:1px;"></div>
+      <span style="color:#201a15;">BARRERA</span>
+    </div>
+    <div class="navcta" style="display:flex; align-items:center; gap:26px; font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#726558;">
+      <a href="#method" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navMethod }}</a><a href="#coaching" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navCoaching }}</a><a href="#results" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navResults }}</a>
+      <button sc-camel-on-click="{{ toggleLang }}" style="cursor:pointer; background:transparent; color:#201a15; border:1px solid #d9cdb9; border-radius:20px; padding:7px 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:13px; letter-spacing:.1em;">{{ otherLangLabel }}</button>
+      <a href="#apply" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:11px 20px; border-radius:22px; text-transform:uppercase; letter-spacing:.06em; font-size:13px;">{{ t.apply }}</a>
+    </div>
+  </div>
+
+  <!-- hero -->
+  <div style="position:relative; overflow:hidden;">
+    <div style="position:absolute; top:-160px; right:-120px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle,#ffd9a8 0%,#ffb877 38%,rgba(255,184,119,0) 70%); opacity:.7;"></div>
+    <div class="col2" style="position:relative; max-width:1180px; margin:0 auto; padding:76px 44px 68px; display:grid; grid-template-columns:1.1fr .9fr; gap:52px; align-items:center;">
+      <div>
+        <div style="display:inline-block; font-size:13px; letter-spacing:.24em; text-transform:uppercase; color:#0037a1; border-left:3px solid #0037a1; padding-left:12px; margin-bottom:24px;">{{ t.heroKicker }}</div>
+        <h1 class="hh1" style="font-family:'Anton',sans-serif; font-weight:400; font-size:92px; line-height:.9; margin:0 0 24px; letter-spacing:.005em;">{{ t.heroTitle }}</h1>
+        <p style="font-size:21px; line-height:1.5; color:#5c5348; max-width:29em; margin:0 0 34px;">{{ t.heroSub }}</p>
+        <div style="display:flex; gap:16px; align-items:center;">
+          <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:17px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.07em; font-size:15px; box-shadow:0 12px 26px rgba(239,95,40,.28);">{{ t.applyCta }}</a>
+          <a href="#results" style="text-decoration:none; color:#201a15; font-weight:600; padding:16px 6px; text-transform:uppercase; letter-spacing:.08em; font-size:14px; border-bottom:2px solid #e0d3bf;">{{ t.navResults }}</a>
+        </div>
+      </div>
+      <div style="position:relative;">
+        <div style="position:absolute; inset:-18px; border-radius:24px; background:linear-gradient(140deg,#ff8a4c,#ef5f28); opacity:.16;"></div>
+        <div style="position:relative; aspect-ratio:3/4; border-radius:18px; overflow:hidden; box-shadow:0 24px 50px rgba(120,70,30,.22);">
+          <img src="assets/66d24ce8-9449-49d9-b50e-d6132c469560.webp" alt="Alexander Barrera" style="width:100%; height:100%; object-fit:cover; object-position:60% 18%; display:block;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stats band -->
+  <div style="background:repeating-linear-gradient(115deg, rgba(255,255,255,.07) 0 2px, transparent 2px 24px), linear-gradient(105deg,#12448f 0%,#0037a1 55%,#00256e 100%);">
+    <div class="statrow" style="max-width:1180px; margin:0 auto; padding:34px 44px; display:flex; justify-content:space-around; color:#fff;">
+      <div style="text-align:center;"><div style="font-family:'Anton',sans-serif; font-size:44px; line-height:1;">{{ t.stat1n }}</div><div style="font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#ffe6d3;">{{ t.stat1l }}</div></div>
+      <div class="statdiv" style="width:3px; height:44px; background:rgba(255,255,255,.4); transform:skewX(-18deg); border-radius:2px;"></div>
+      <div style="text-align:center;"><div style="font-family:'Anton',sans-serif; font-size:44px; line-height:1;">{{ t.stat2n }}</div><div style="font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#ffe6d3;">{{ t.stat2l }}</div></div>
+      <div class="statdiv" style="width:3px; height:44px; background:rgba(255,255,255,.4); transform:skewX(-18deg); border-radius:2px;"></div>
+      <div style="text-align:center;"><div style="font-family:'Anton',sans-serif; font-size:44px; line-height:1;">{{ t.stat3n }}</div><div style="font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#ffe6d3;">{{ t.stat3l }}</div></div>
+    </div>
+  </div>
+
+  <!-- about -->
+  <div class="col2" style="max-width:1180px; margin:0 auto; padding:78px 44px; display:grid; grid-template-columns:.85fr 1.15fr; gap:48px; align-items:center;">
+    <div style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; box-shadow:0 18px 40px rgba(120,70,30,.16);">
+      <img src="assets/478290bc-9a7a-4c6f-9170-dee26e1b9941.webp" alt="Alexander Barrera training with clients" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+    </div>
+    <div>
+      
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:18px;">
+        <div style="width:24px; height:16px; border-radius:2px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 1px 3px rgba(0,0,0,.15);">
+          <div style="flex:1; background:#ffcf00;"></div>
+          <div style="flex:1; background:#0037a1;"></div>
+          <div style="flex:1; background:#cf142b;"></div>
+        </div>
+        <span style="font-family:'Barlow Semi Condensed',sans-serif; font-weight:700; text-transform:uppercase; letter-spacing:.18em; font-size:12px; color:#201a15;">Est. 2009 · Venezuela</span>
+      </div>
+      <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; line-height:1; margin:0 0 24px;">{{ t.aboutTitle }}</h2>
+      <p style="font-size:19px; line-height:1.7; color:#5c5348; margin:0 0 16px;">{{ t.aboutP1 }}</p>
+      <p style="font-size:19px; line-height:1.7; color:#5c5348; margin:0 0 16px;">{{ t.aboutP2 }}</p>
+      <p style="font-size:19px; line-height:1.7; color:#5c5348; margin:0;">{{ t.aboutP3 }}</p>
+    </div>
+  </div>
+
+  <!-- photo gallery -->
+  <div style="max-width:1180px; margin:0 auto; padding:0 44px 64px; position:relative;">
+    <div aria-hidden="true" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none;">
+      <img data-gallery-preload="0" src="assets/eccd113a-4a84-427f-b646-dfd2f76b3957.webp" alt="">
+      <img data-gallery-preload="1" src="assets/b7993583-e519-4293-b331-242a985e5e52.webp" alt="">
+      <img data-gallery-preload="2" src="assets/525c0a07-e140-46f1-ba6a-9839d7c1f09f.webp" alt="">
+      <img data-gallery-preload="3" src="assets/e8c1c6ec-237b-4499-96f0-1aa6e84bd634.webp" alt="">
+      <img data-gallery-preload="4" src="assets/1916bc7e-ab7f-4e09-82db-87733ce56c2a.webp" alt="">
+      <img data-gallery-preload="5" src="assets/fa67ddc5-5a20-41d3-9f57-c846f5733d35.webp" alt="">
+      <img data-gallery-preload="6" src="assets/fb0dc91e-5b68-40dd-b865-dadb436431d0.webp" alt="">
+      <img data-gallery-preload="7" src="assets/bdffe52e-a773-4ff6-9ee1-4c2d0baca8f4.webp" alt="">
+    </div>
+    <div ref="{{ galleryRef }}" class="gallery-row" style="display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding:2px;">
+      <sc-for list="{{ galleryImages }}" as="img" hint-placeholder-count="0">
+        <div class="gallery-tile" sc-camel-on-click="{{ img.onClick }}" style="flex:0 0 auto; width:150px; aspect-ratio:4/5; border-radius:12px; overflow:hidden; box-shadow:0 8px 20px rgba(120,90,50,.12); scroll-snap-align:start; cursor:zoom-in;">
+          <img ref="{{ img.imgRef }}" alt="{{ img.alt }}" style="width:100%; height:100%; object-fit:cover; object-position:{{ img.pos }}; display:block;">
+        </div>
+      </sc-for>
+    </div>
+    <button type="button" sc-camel-on-click="{{ galleryPrev }}" aria-label="Scroll left" class="gallery-arrow" style="position:absolute; left:22px; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; border:1px solid #ece2d2; background:#fff; color:#ef5f28; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(120,90,50,.16);">‹</button>
+    <button type="button" sc-camel-on-click="{{ galleryNext }}" aria-label="Scroll right" class="gallery-arrow" style="position:absolute; right:22px; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; border:1px solid #ece2d2; background:#fff; color:#ef5f28; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(120,90,50,.16);">›</button>
+  </div>
+
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div sc-camel-on-click="{{ closeLightbox }}" style="position:fixed; inset:0; background:rgba(20,17,13,.88); z-index:100; display:flex; align-items:center; justify-content:center; padding:40px; cursor:zoom-out;">
+      <img ref="{{ lightboxImgRef }}" alt="{{ lightboxAlt }}" style="max-width:min(90vw,720px); max-height:86vh; width:auto; height:auto; object-fit:contain; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.5); cursor:default;">
+      <button type="button" sc-camel-on-click="{{ closeLightboxBtn }}" aria-label="Close" style="position:absolute; top:24px; right:28px; width:44px; height:44px; border-radius:50%; border:none; background:rgba(255,255,255,.14); color:#fff; font-size:22px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;">×</button>
+      <button type="button" sc-camel-on-click="{{ lightboxPrev }}" aria-label="Previous photo" style="position:absolute; left:20px; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:none; background:rgba(255,255,255,.14); color:#fff; font-size:24px; cursor:pointer; display:flex; align-items:center; justify-content:center;">‹</button>
+      <button type="button" sc-camel-on-click="{{ lightboxNext }}" aria-label="Next photo" style="position:absolute; right:20px; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:none; background:rgba(255,255,255,.14); color:#fff; font-size:24px; cursor:pointer; display:flex; align-items:center; justify-content:center;">›</button>
+    </div>
+  </sc-if>
+
+  <!-- how it works -->
+  <div id="method" style="background:#faf3e8; border-top:1px solid #f0e7d9;">
+    <div style="max-width:1180px; margin:0 auto; padding:78px 44px;">
+      
+      <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 44px; color:#201a15;">{{ t.howTitle }}</h2>
+      <div class="col4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative;">
+        <div class="methodline" style="position:absolute; top:29px; left:13%; right:13%; height:2px; background:linear-gradient(90deg,#0037a1,#1a4fb8); opacity:.22;"></div>
+        <sc-for list="{{ howSteps }}" as="s" hint-placeholder-count="4">
+          <div style="position:relative;">
+            <div style="position:relative; width:58px; height:58px; margin-bottom:20px;">
+              <div style="display:flex; align-items:center; justify-content:center; width:58px; height:58px; border-radius:50%; background:linear-gradient(135deg,#1a4fb8,#0037a1); box-shadow:0 10px 22px rgba(0,55,161,.26);">{{ s.icon }}</div>
+              <div style="position:absolute; top:-7px; right:-7px; width:25px; height:25px; border-radius:50%; background:#fff; border:2px solid #0037a1; color:#0037a1; font-family:'Anton',sans-serif; font-size:13px; line-height:1; display:flex; align-items:center; justify-content:center;">{{ s.n }}</div>
+            </div>
+            <h3 style="font-size:22px; font-weight:700; margin:0 0 9px; color:#201a15;">{{ s.t }}</h3>
+            <p style="font-size:20px; line-height:1.6; color:#726558; margin:0;">{{ s.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- why it works -->
+  <div style="background:linear-gradient(180deg,#fdfbf7 0%,#fff4ec 100%); border-top:1px solid #f0e7d9;">
+    <div style="max-width:900px; margin:0 auto; padding:86px 44px; text-align:center;">
+      
+      <div style="width:52px; height:5px; background:#ffcf00; border-radius:2px; margin:0 auto 28px; transform:skewX(-20deg);"></div>
+      <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:52px; line-height:1.15; margin:0 0 26px; color:#201a15; letter-spacing:.01em;">{{ t.whyTitleL1 }}<br>{{ t.whyTitleL2 }}</h2>
+      <p style="font-size:20px; line-height:1.55; color:#5c5348; margin:0 auto; max-width:34em;">{{ t.whyBody }}</p>
+      <p style="font-family:'Anton',sans-serif; font-weight:400; font-size:25px; color:#0037a1; margin:24px 0 0; letter-spacing:.015em;">{{ t.whyPunch }}</p>
+    </div>
+  </div>
+
+  <!-- pillars -->
+  <div style="background:#fff4ec;">
+    <div style="max-width:1180px; margin:0 auto; padding:74px 44px;">
+      <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:42px; margin:0 0 44px;">{{ t.pillarsTitle }}</h2>
+      <div class="col2" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+          <div class="pcard" style="background:#fff; border:1px solid #f2e3d3; border-radius:14px; padding:30px;">
+            <div style="font-family:'Anton',sans-serif; font-size:30px; color:#0037a1; margin-bottom:12px;">{{ p.n }}</div>
+            <h3 style="font-size:22px; font-weight:700; margin:0 0 10px;">{{ p.t }}</h3>
+            <p style="font-size:20px; line-height:1.6; color:#726558; margin:0;">{{ p.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- moto brand band -->
+  <div style="position:relative; height:440px; overflow:hidden;">
+    <img src="assets/7f3944cc-9f37-4268-8658-13520fb9c5b0.webp" alt="Alexander Barrera at the track" style="width:100%; height:100%; object-fit:cover; object-position:center 28%; display:block;">
+    <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(20,17,13,.86) 0%, rgba(20,17,13,.45) 44%, rgba(20,17,13,0) 68%);"></div>
+    <div style="position:absolute; inset:0; display:flex; align-items:center;">
+      <div style="max-width:1180px; margin:0 auto; padding:0 44px; width:100%;">
+        
+        <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:52px; line-height:1; color:#fdfbf7; margin:0; max-width:13em;">{{ t.motoLine }}</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- programs -->
+  <div id="coaching" style="max-width:1180px; margin:0 auto; padding:78px 44px;">
+    
+    <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 8px;">{{ t.programsTitle }}</h2>
+    <p style="font-size:19px; color:#726558; margin:0 0 38px; max-width:34em;">{{ t.programsSub }}</p>
+    <div class="col4" style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px;">
+      <sc-for list="{{ tiers }}" as="tier" hint-placeholder-count="4">
+        <div class="tcard" style="border:1px solid {{ tier.border }}; border-radius:16px; padding:28px 22px; background:{{ tier.bg }}; display:flex; flex-direction:column; box-shadow:{{ tier.shadow }};">
+          <div style="min-height:22px; margin-bottom:8px;"><span style="font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:#ef5f28; padding:3px 9px; border-radius:20px; visibility:{{ tier.badgeVis }};">{{ t.popular }}</span></div>
+          <div style="font-family:'Anton',sans-serif; font-size:27px;">{{ tier.name }}</div>
+          <div style="font-size:14px; text-transform:uppercase; letter-spacing:.06em; color:#8a7d6d; margin-bottom:18px;">{{ tier.freq }}</div>
+          <div style="margin-bottom:20px;"><span style="font-family:'Anton',sans-serif; font-size:40px;">{{ tier.price }}</span><span style="color:#8a7d6d; font-size:15px;"> {{ tier.per }}</span></div>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:26px;">
+            <sc-for list="{{ tier.feats }}" as="f" hint-placeholder-count="4">
+              <div style="display:flex; gap:9px; font-size:16px; line-height:1.45; color:#5c5348;"><span style="color:#ef5f28; font-weight:700;">/</span><span>{{ f }}</span></div>
+            </sc-for>
+          </div>
+          <a href="#apply" style="margin-top:auto; text-align:center; text-decoration:none; padding:13px; border-radius:24px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #ef5f28;">{{ t.apply }}</a>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- results -->
+  <div id="results" style="background:#f6f1e8;">
+    <div style="max-width:1180px; margin:0 auto; padding:78px 44px;">
+      
+      <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 38px; text-align:center;">{{ t.resultsTitle }}</h2>
+      <div class="col2" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:60px;">
+        <div style="background:#fff; border:1px solid #ece2d2; border-radius:16px; overflow:hidden; box-shadow:0 10px 26px rgba(120,90,50,.08);">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px;">
+            <div style="position:relative; aspect-ratio:3/4; overflow:hidden;">
+              <img src="assets/f0147d71-7599-423f-847b-fb180b54aa4c.webp" alt="Client before, front" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block; transform:scale(1.32); transform-origin:center 30%;">
+              <span style="position:absolute; top:12px; left:12px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:rgba(32,26,21,.72); color:#fff; padding:5px 10px; border-radius:16px;">{{ t.before }}</span>
+            </div>
+            <div style="position:relative; aspect-ratio:3/4; overflow:hidden;">
+              <img src="assets/d08be6a9-daed-4d49-a7d5-0ea34eb12709.webp" alt="Client after, front" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block;">
+              <span style="position:absolute; top:12px; left:12px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:#ef5f28; color:#fff; padding:5px 10px; border-radius:16px;">{{ t.after }}</span>
+            </div>
+          </div>
+          <div style="padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-weight:700; font-size:16px;">{{ t.tFront }}</div>
+            <span style="font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#ef5f28; border:1px solid #f3c3a6; padding:4px 9px; border-radius:20px;">{{ t.tTag }}</span>
+          </div>
+        </div>
+        <div style="background:#fff; border:1px solid #ece2d2; border-radius:16px; overflow:hidden; box-shadow:0 10px 26px rgba(120,90,50,.08);">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px;">
+            <div style="position:relative; aspect-ratio:3/4; overflow:hidden;">
+              <img src="assets/c87b4911-7593-43c7-a409-d3c8dd378cd2.webp" alt="Client before, back" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+              <span style="position:absolute; top:12px; left:12px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:rgba(32,26,21,.72); color:#fff; padding:5px 10px; border-radius:16px;">{{ t.before }}</span>
+            </div>
+            <div style="position:relative; aspect-ratio:3/4; overflow:hidden;">
+              <img src="assets/f23031fa-b228-4457-b3b6-241498b700fc.webp" alt="Client after, back" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
+              <span style="position:absolute; top:12px; left:12px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; background:#ef5f28; color:#fff; padding:5px 10px; border-radius:16px;">{{ t.after }}</span>
+            </div>
+          </div>
+          <div style="padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-weight:700; font-size:16px;">{{ t.tBack }}</div>
+            <span style="font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#ef5f28; border:1px solid #f3c3a6; padding:4px 9px; border-radius:20px;">{{ t.tTag }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        <sc-for list="{{ testimonials }}" as="q" hint-placeholder-count="3">
+          <div class="qcard" style="padding:26px; border-left:3px solid #0037a1; background:#fff; border-radius:0 12px 12px 0;">
+            <p style="font-size:19px; line-height:1.6; margin:0 0 14px; color:#2b241d;">{{ q.q }}</p>
+            <div style="font-size:14px; text-transform:uppercase; letter-spacing:.1em; color:#8a7d6d;">{{ q.n }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- faq -->
+  <div style="background:#faf3e8; border-top:1px solid #f0e7d9;">
+    <div style="max-width:1180px; margin:0 auto; padding:78px 44px;">
+      
+      <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 12px; text-align:center;">{{ t.faqTitle }}</h2>
+      <div style="max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:14px;">
+        <sc-for list="{{ faqItems }}" as="item" hint-placeholder-count="5">
+          <div class="faq-item {{ item.openClass }}" sc-camel-on-click="{{ item.onClick }}" style="cursor:pointer; background:#fff; border:1px solid #efe1cf; border-radius:14px; padding:20px 24px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:18px;">
+              <h3 style="font-size:20px; font-weight:700; margin:0; color:#201a15;">{{ item.q }}</h3>
+              <span class="faq-ico" style="flex:none; width:28px; height:28px; border-radius:50%; border:1.5px solid #e4b7a6; color:#ef5f28; display:flex; align-items:center; justify-content:center;"><svg width="12" height="12" sc-camel-view-box="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 1.5v9M1.5 6h9"></path></svg></span>
+            </div>
+            <div class="faq-ans"><div style="overflow:hidden; min-height:0;"><p style="font-size:18px; line-height:1.65; color:#726558; margin:14px 0 2px;">{{ item.a }}</p></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- apply -->
+  <div id="apply" style="max-width:1180px; margin:0 auto; padding:82px 44px;">
+    <div class="col2" style="display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:start;">
+      <div>
+        
+        <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:54px; line-height:.98; margin:0 0 20px;">{{ t.applyTitle }}</h2>
+        <p style="font-size:18px; line-height:1.6; color:#5c5348; margin:0;">{{ t.applySub }}</p>
+        <div style="margin-top:28px;">
+          <div style="font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:#8a7d6d; margin-bottom:12px;">{{ t.contactDirect }}</div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a href="https://wa.me/584123139890" target="_blank" rel="noopener" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1px solid #d9cdb9; border-radius:24px; padding:11px 18px; color:#201a15; font-weight:600; font-size:14px;">WhatsApp</a>
+            <a href="https://instagram.com/soyalexanderbarrera" target="_blank" rel="noopener" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1px solid #d9cdb9; border-radius:24px; padding:11px 18px; color:#201a15; font-weight:600; font-size:14px;">@soyalexanderbarrera</a>
+            <a href="mailto:ajbzfit@gmail.com" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1px solid #d9cdb9; border-radius:24px; padding:11px 18px; color:#201a15; font-weight:600; font-size:14px;">ajbzfit@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div style="background:#fff; border:1px solid #ece2d2; border-radius:18px; padding:30px; box-shadow:0 14px 34px rgba(120,90,50,.10);">
+            <div style="display:flex; justify-content:space-between; align-items:baseline;">
+              <span style="font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:#8a7d6d;">{{ stepLabelText }}</span>
+              <span style="font-family:'Anton',sans-serif; font-size:22px; color:#201a15;">{{ stepTitle }}</span>
+            </div>
+            <div style="height:6px; background:#f0e7d9; border-radius:6px; overflow:hidden; margin:12px 0 26px;">
+              <div style="height:100%; width:{{ pct }}; background:linear-gradient(90deg,#ff8a4c,#ef5f28); border-radius:6px; transition:width .3s ease;"></div>
+            </div>
+
+            <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex; flex-direction:column; gap:14px;">
+                <input value="{{ form.name }}" sc-camel-on-change="{{ onName }}" placeholder="{{ t.fName }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+                <input value="{{ form.email }}" sc-camel-on-change="{{ onEmail }}" type="email" placeholder="{{ t.fEmail }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+                <input value="{{ form.wa }}" sc-camel-on-change="{{ onWa }}" placeholder="{{ t.fWa }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep2 }}">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:12px;">{{ t.fGoalQ }}</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                    <sc-for list="{{ goalChips }}" as="c" hint-placeholder-count="4"><button type="button" sc-camel-on-click="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:12px;">{{ t.fExpQ }}</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                    <sc-for list="{{ expChips }}" as="c" hint-placeholder-count="3"><button type="button" sc-camel-on-click="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:12px;">{{ t.fChallengeQ }}</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                    <sc-for list="{{ challengeChips }}" as="c" hint-placeholder-count="5"><button type="button" sc-camel-on-click="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep3 }}">
+              <div style="display:flex; flex-direction:column; gap:24px;">
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:12px;">{{ t.fFreqQ }}</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                    <sc-for list="{{ freqChips }}" as="c" hint-placeholder-count="4"><button type="button" sc-camel-on-click="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:12px;">{{ t.fDaysQ }}</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                    <sc-for list="{{ daysChips }}" as="c" hint-placeholder-count="3"><button type="button" sc-camel-on-click="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:12px;">{{ t.fEquipQ }}</div>
+                  <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                    <sc-for list="{{ equipChips }}" as="c" hint-placeholder-count="3"><button type="button" sc-camel-on-click="{{ c.onClick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep4 }}">
+              <div style="display:flex; flex-direction:column; gap:20px;">
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:10px;">{{ t.fWhyQ }}</div>
+                  <textarea value="{{ form.why }}" sc-camel-on-change="{{ onWhy }}" rows="3" placeholder="{{ t.fWhyQ }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
+                </div>
+                <div>
+                  <div style="font-size:15px; font-weight:600; margin-bottom:10px;">{{ t.fNotes }}</div>
+                  <textarea value="{{ form.notes }}" sc-camel-on-change="{{ onNotes }}" rows="3" placeholder="{{ t.fNotes }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
+                </div>
+              </div>
+            </sc-if>
+
+            <div style="display:flex; align-items:center; margin-top:28px;">
+              <sc-if value="{{ canBack }}" hint-placeholder-val="{{ true }}">
+                <button type="button" sc-camel-on-click="{{ back }}" style="cursor:pointer; background:transparent; border:1px solid #d9cdb9; color:#5c5348; font-weight:700; padding:14px 24px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit;">{{ t.back }}</button>
+              </sc-if>
+              <span style="flex:1;"></span>
+              <sc-if value="{{ showNext }}" hint-placeholder-val="{{ true }}">
+                <button type="button" sc-camel-on-click="{{ next }}" disabled="{{ nextDisabled }}" style="{{ nextStyle }}">{{ t.next }}</button>
+              </sc-if>
+              <sc-if value="{{ isStep4 }}">
+                <button type="button" sc-camel-on-click="{{ submit }}" style="cursor:pointer; background:#ef5f28; color:#fff; border:none; font-weight:700; padding:15px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit; box-shadow:0 10px 22px rgba(239,95,40,.24);">{{ t.submit }}</button>
+              </sc-if>
+            </div>
+          </div>
+        </sc-if>
+        <sc-if value="{{ sent }}">
+          <div style="border:1px solid #f3c3a6; border-radius:16px; padding:44px; background:#fff4ec; text-align:center;">
+            <div style="font-family:'Anton',sans-serif; font-size:32px; color:#ef5f28; margin-bottom:10px;">{{ t.sentTitle }}</div>
+            <p style="font-size:17px; color:#5c5348; margin:0;">{{ t.sentBody }}</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="background:linear-gradient(105deg,#ff8a4c 0%,#ef5f28 58%,#e0491a 100%);">
+    <div style="max-width:1180px; margin:0 auto; padding:30px 44px; display:flex; justify-content:space-between; align-items:center; color:#fff;">
+      <div style="display:flex; align-items:center; gap:8px; font-family:'Anton',sans-serif; font-size:20px; line-height:.8; letter-spacing:-.01em;">
+        <img src="assets/15f820f8-810e-4522-9963-91e37d3da817.png" alt="" aria-hidden="true" style="height:38px; width:auto; mix-blend-mode:multiply; margin-right:4px;">
+        <span style="color:#fff;">ALEXANDER</span>
+        <div style="width:8px; height:22px; background:linear-gradient(180deg,#ffcf00 0 33.33%,#0037a1 33.33% 66.66%,#cf142b 66.66% 100%); transform:skewX(-20deg); border-radius:1px;"></div>
+        <span style="color:#fff;">BARRERA</span>
+      </div>
+      <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <div style="width:22px; height:15px; border-radius:2px; overflow:hidden; display:flex; flex-direction:column;">
+            <div style="flex:1; background:#ffcf00;"></div>
+            <div style="flex:1; background:#0037a1;"></div>
+            <div style="flex:1; background:#cf142b;"></div>
+          </div>
+          <span style="text-transform:uppercase; letter-spacing:.16em; font-size:12px; color:#fff;">Est. 2009 · Venezuela</span>
+        </div>
+        <span style="text-transform:uppercase; letter-spacing:.12em; font-size:13px; color:#ffe6d3;">{{ t.footerTag }}</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null, sent: false, step: 1, faqOpen: 0, lightbox: null, form: { name: '', email: '', wa: '', goal: '', exp: '', freq: '', days: '', equip: '', challenge: '', why: '', notes: '' } };
+
+  componentDidMount() {
+    this._onGalleryKey = (e) => {
+      if (this.state.lightbox === null) return;
+      const len = this.galleryImages.length;
+      if (e.key === 'Escape') this.setState({ lightbox: null });
+      else if (e.key === 'ArrowLeft') this.setState(s => ({ lightbox: (s.lightbox - 1 + len) % len }));
+      else if (e.key === 'ArrowRight') this.setState(s => ({ lightbox: (s.lightbox + 1) % len }));
+    };
+    window.addEventListener('keydown', this._onGalleryKey);
+
+    const preloads = document.querySelectorAll('img[data-gallery-preload]');
+    const resolved = new Array(this.galleryImages.length);
+    preloads.forEach(img => {
+      const idx = parseInt(img.getAttribute('data-gallery-preload'), 10);
+      resolved[idx] = img.src;
+    });
+    this._resolvedGallery = resolved;
+    this.forceUpdate();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._onGalleryKey);
+  }
+
+  resolvedGallerySrc(i) {
+    return (this._resolvedGallery && this._resolvedGallery[i]) || this.galleryImages[i].src;
+  }
+
+  galleryRef = React.createRef();
+
+  galleryImages = [
+    { src: 'uploads/die 2 - Copy.jpg', alt: 'Alexander Barrera, nutrition', pos: 'center' },
+    { src: 'uploads/gouveiandres_20211116_095239.jpg', alt: 'Alexander Barrera competing', pos: 'center 20%' },
+    { src: 'uploads/pasted-1783287014380-0.png', alt: 'Alexander Barrera', pos: 'center 15%' },
+    { src: 'gallery-5.jpg', alt: 'Alexander celebrating with motorcycles', pos: 'center' },
+    { src: 'gallery-6.jpg', alt: 'Alexander with guitar', pos: 'center' },
+    { src: 'uploads/pasted-1783291687641-0.png', alt: 'Alexander holding the Venezuelan flag on the beach', pos: 'center' },
+    { src: 'uploads/pasted-1784240778676-0.png', alt: 'Alexander Barrera, certified personal trainer', pos: 'center 20%' },
+    { src: 'uploads/pasted-1783304751897-0.png', alt: 'Alexander Barrera training outdoors', pos: 'center' },
+  ];
+
+  L() { return this.state.lang || this.props.defaultLang || 'en'; }
+
+  data() {
+    const showPrices = this.props.showPrices !== false;
+    const en = {
+      navMethod: 'Method', navCoaching: 'Coaching', navResults: 'Results', apply: 'Get started', applyCta: 'Book a free intro call', popular: 'Most popular',
+      heroKicker: '1:1 Coaching for Men',
+      heroTitle: 'STRONG. AESTHETIC. TOGETHER.',
+      heroSub: "Most men are training alone, if they're training at all. I coach you 1:1, live on Zoom, every week, building the strong, lean body you actually want. Not an app. Not a script. A real training partner in your corner.",
+      stat1n: '7+', stat1l: 'years coaching', stat2n: '8,000+', stat2l: 'hours 1:1', stat3n: 'CPT', stat3l: 'certified trainer',
+      howKicker: 'How it works', howTitle: 'Simple. Live. Accountable.',
+      whyKicker: 'Why it works', whyTitleL1: 'Show up. Stay consistent.', whyTitleL2: 'See results.',
+      whyBody: 'When training is fun and someone is holding you accountable, you actually show up, week after week. Consistency is where results come from, and it is the exact thing that has been missing every time you started and stopped before.',
+      whyPunch: "If that has been you, this is your answer. Your best shape isn't behind you.",
+      howSteps: [
+        { n: '1', t: 'Connect on Zoom', d: 'We meet live, one on one. A standing appointment on your calendar is what turns "I meant to train" into actually showing up.' },
+        { n: '2', t: 'I watch your form', d: 'You bring the intensity; I watch every rep in real time and catch what is holding you back, and what could get you hurt. Your only job is effort and form.' },
+        { n: '3', t: 'I track your training', d: 'Every set, rep, and weight is logged and planned for you. I carry the brain work, so there is no spreadsheet and no guessing what comes next.' },
+        { n: '4', t: 'You progress', d: 'Using true progressive overload, I tell you exactly what to add next, so every week builds on the last instead of spinning your wheels.' },
+      ],
+      aboutKicker: 'Not just a coach',
+      aboutTitle: "I'm not your app. I'm your training partner.",
+      aboutP1: "I'm a certified personal trainer, 100% natural bodybuilder, and nutrition coach, and I'm proud of it: no steroids, no shortcuts, just real training and real food. Fitness has been my life since I was a kid, from playing soccer to discovering my real passion, weightlifting, at 16. Outside the gym I'm on my motorcycle, playing guitar, or off exploring somewhere new.",
+      aboutP2: "Training didn't just change my body. It sharpened my strength and sleep, lifted my mood, and cut my stress and anxiety while building real self-esteem. A lot of the men I coach are chasing that same shift: not just a leaner body, but feeling like themselves again.",
+      aboutP3: "Motivation gets you started; a real friend keeps you going. Every call, we train hard, talk trash, laugh, and blow off steam. Whatever's on your mind, I'm listening. Plenty of clients tell me our sessions are the best part of their week. Honestly, they're one of the best parts of mine too.",
+      pillarsTitle: 'What you get with me',
+      pillars: [
+        { n: '01', t: 'Form-first coaching', d: "I review your lifts on video and coach the details most people skip: tempo, time under tension, and a real mind muscle connection, with an eye trained by years on the bodybuilding stage." },
+        { n: '02', t: 'Programs that fit your life', d: 'Custom training built around your routine, not the other way around. My programs never bore you.' },
+        { n: '03', t: 'Train anywhere, any kit', d: "On vacation, from a hotel gym, or a park bench, wherever you are, I build the plan around whatever you've got." },
+        { n: '04', t: 'HIIT & mobility', d: 'Live HIIT to torch fat, plus mobility work built for joints that have earned a few miles, so you build strength that lasts.' },
+        { n: '05', t: 'Nutrition & fat loss', d: 'Lose weight, tone up, or build muscle with a nutrition approach you can actually stick to, so you look better in (and out of) your clothes.' },
+        { n: '06', t: 'Real accountability', d: "A set time each week that's just for you, with someone who actually notices if you don't show up. That's what turns good intentions into a habit." },
+      ],
+      programsKicker: 'Coaching', programsTitle: 'Pick your pace',
+      programsSub: '1:1 virtual coaching sessions per week. Every plan is fully custom to your body and goals.',
+      tierNames: ['Starter', 'Partner', 'Committed', 'All In'],
+      tierFreqs: ['1 session / week', '2 sessions / week', '3 sessions / week', '4 sessions / week'],
+      tierPrices: ['$150', '$300', '$450', '$600'], per: '/mo',
+      tierFeats: [
+        ['Custom training program', 'Weekly 1:1 video session', 'Nutrition guidance', 'Chat support'],
+        ['Everything in Starter', 'Two 1:1 sessions weekly', 'Ongoing form reviews', 'Habit tracking'],
+        ['Everything in Build', 'Three 1:1 sessions weekly', 'Weekly accountability call', 'Priority chat support'],
+        ['Everything in Accelerate', 'Four 1:1 sessions weekly', 'Full nutrition planning', 'Daily check-ins'],
+      ],
+      resultsKicker: 'Results', resultsTitle: 'Real men. Real change.',
+      before: 'BEFORE', after: 'AFTER', tFront: 'Front · 2-year transformation', tBack: 'Back · 2-year transformation', tTag: 'Fat loss + muscle',
+      transforms: [
+        { name: 'Marcus, 47', weeks: '16 weeks', tag: 'Recomp' },
+        { name: 'David, 52', weeks: '20 weeks', tag: 'Fat loss' },
+        { name: 'Jon, 44', weeks: '24 weeks', tag: 'Muscle gain' },
+      ],
+      testimonials: [
+        { q: "Training with Alexander is wonderful, he makes it entertaining and it's a genuinely good workout. He's the reason I've stuck with strength training.", n: 'Cathy M.' },
+        { q: 'Alexander did a beautiful job targeting every muscle, a nice warm-up, clear explanations, and accommodations for whatever level you\u2019re at. A genuinely good hour-long workout.', n: 'Nancy C.' },
+        { q: "We focused on the mind-muscle connection of every movement, plus intensity and proper form. It's helped me level up my garage gym workouts. Highly recommend!", n: 'Rak J.' },
+      ],
+      applyKicker: 'Apply', applyTitle: 'Ready to go beyond your limits?',
+      applySub: "Tell me about your goals and I'll reach out to schedule a free intro call. No pressure, no judgment, just a real conversation before we start.",
+      contactDirect: 'Or reach me directly',
+      fName: 'Full name', fEmail: 'Email', fGoal: 'Your main goal', fExp: 'Experience level', fFreq: 'Sessions per week you want',
+      expOptions: ['Beginner', 'Intermediate', 'Advanced'],
+      submit: 'Apply for coaching', sentTitle: 'Application received!',
+      sentBody: "Your WhatsApp just opened with your details filled in, hit send and I'll reply within 24 hours to book your call.",
+      footerTag: 'Online coaching for men, worldwide.',
+      faqKicker: 'FAQ', faqTitle: 'Good to know',
+      motoKicker: 'Off the clock', motoLine: 'Same intensity, on the bike and under the bar.',
+      faq: [
+        { q: 'How do we start?', a: "With a quick intro call so I can understand your goals and make sure we're a good fit before your first session." },
+        { q: "I'm out of shape, or dealing with an old injury. Can I still do this?", a: "Absolutely. Whatever your age or shape, we start where you are. Programming is built around your body in real time, adjusted for old injuries and joints, not a generic one-size-fits-all plan. And no judgment about where you're starting." },
+        { q: 'Do I need equipment?', a: 'No. I program for a full gym, a few things at home, or no equipment at all, and I adapt your training anywhere, including when you travel.' },
+        { q: 'Can I reschedule or cancel a session?', a: 'Yes, just give more than 24 hours\u2019 notice. Inside 24 hours, that session is forfeited.' },
+        { q: 'Do unused sessions expire?', a: 'A delayed session stays available for 30 days from its original date, then expires.' },
+        { q: 'What about refunds or breaks?', a: 'No refunds for partial months. If you need an extended break of a month or more, I can put your plan on pause.' },
+      ],
+      formStepLabel: 'Step', formOf: 'of', back: 'Back', next: 'Next',
+      step1Title: 'Your details', step2Title: 'Your goal', step3Title: 'Your training', step4Title: 'Almost there',
+      fWa: 'WhatsApp / phone',
+      fGoalQ: 'What do you want most?', fExpQ: 'How long have you trained seriously?',
+      fFreqQ: 'Sessions per week', fDaysQ: 'Days you can train', fEquipQ: 'Equipment access',
+      fNotes: 'Injuries, schedule, or anything else I should know?',
+      goalOptions: ['Lose fat', 'Build muscle', 'Recomposition', 'Get stronger'],
+      daysOptions: ['2–3 days', '4–5 days', '6+ days'],
+      equipOptions: ['Full gym', 'Home basics', 'Bodyweight only'],
+      fChallengeQ: "What's holding you back right now?",
+      challengeOptions: ['Can\u2019t stay consistent', 'Worried about injury / pain', 'Not sure how to progress', 'Stuck at a plateau', 'No time / need structure'],
+      fWhyQ: 'Why are you applying for coaching right now?',
+    };
+    const es = {
+      navMethod: 'Método', navCoaching: 'Coaching', navResults: 'Resultados', apply: 'Empezar', applyCta: 'Agenda tu llamada gratis', popular: 'Más popular',
+      heroKicker: 'Un compañero de entrenamiento a tu lado',
+      heroTitle: 'FUERTE. ESTÉTICO. JUNTOS.',
+      heroSub: 'La mayoría de los hombres entrenan solos, si es que entrenan. Te entreno 1:1, en vivo por Zoom, cada semana, construyendo el cuerpo fuerte y definido que quieres. Nada de apps, nada de guiones: un compañero de entrenamiento real, en tu esquina.',
+      stat1n: '7+', stat1l: 'años entrenando', stat2n: '8.000+', stat2l: 'horas 1:1', stat3n: 'CPT', stat3l: 'entrenador certificado',
+      howKicker: 'Cómo funciona', howTitle: 'Simple. En vivo. Con seguimiento.',
+      whyKicker: 'Por qué funciona', whyTitleL1: 'Preséntate. Sé constante.', whyTitleL2: 'Ve resultados.',
+      whyBody: 'Cuando entrenar es divertido y alguien te hace responsable, de verdad te presentas, semana tras semana. La constancia es de donde vienen los resultados, y es justo lo que faltaba cada vez que empezaste y lo dejaste.',
+      whyPunch: 'Si ese has sido tú, esta es tu respuesta. Tu mejor forma no quedó atrás.',
+      howSteps: [
+        { n: '1', t: 'Conectamos por Zoom', d: 'Nos vemos en vivo, uno a uno. Una cita fija en tu calendario convierte el "quería entrenar" en presentarte de verdad.' },
+        { n: '2', t: 'Reviso tu técnica', d: 'Tú pones la intensidad; yo reviso cada repetición en tiempo real y detecto lo que te frena y lo que podría lesionarte. Tu única tarea es el esfuerzo y la técnica.' },
+        { n: '3', t: 'Registro tu entrenamiento', d: 'Cada serie, repetición y peso queda registrado y planificado por mí. Yo cargo con el trabajo mental: sin hojas de cálculo y sin adivinar qué sigue.' },
+        { n: '4', t: 'Progresas', d: 'Con verdadera sobrecarga progresiva te digo exactamente qué sumar después, para que cada semana construya sobre la anterior en vez de estancarte.' },
+      ],
+      aboutKicker: 'Más que un coach',
+      aboutTitle: 'No soy tu app. Soy tu compañero de entrenamiento.',
+      aboutP1: 'Soy entrenador personal certificado, culturista 100% natural y apasionado de la nutrición, y estoy orgulloso de ello: sin esteroides, sin atajos, solo entrenamiento real y comida real. Amo el fitness desde niño: del fútbol pasé a descubrir mi verdadera pasión, el levantamiento de pesas, a los 16. Fuera del gimnasio ando en moto, toco guitarra o explorando algún lugar nuevo.',
+      aboutP2: 'Entrenar no solo cambió mi cuerpo: mejoró mi fuerza y mi sueño, elevó mi ánimo y redujo mi estrés y ansiedad mientras construía autoestima real. Muchos de los hombres que entreno buscan ese mismo cambio: no solo un cuerpo más definido, sino volver a sentirse ellos mismos.',
+      aboutP3: 'La motivación te hace empezar; un amigo de verdad te mantiene. En cada llamada entrenamos duro, nos echamos broma, reímos y soltamos el estrés. Lo que tengas en la cabeza, aquí te escucho. Varios me dicen que nuestras sesiones son lo mejor de su semana. Sinceramente, también son de lo mejor de la mía.',
+      pillarsTitle: 'Lo que consigues conmigo',
+      pillars: [
+        { n: '01', t: 'Técnica primero', d: 'Reviso tus levantamientos en video y trabajo los detalles que la mayoría pasa por alto: el tempo, el tiempo bajo tensión y una verdadera conexión mente músculo, con un ojo entrenado por años sobre el escenario del culturismo.' },
+        { n: '02', t: 'Programas para tu vida', d: 'Entrenamiento personalizado integrado en tu rutina, no al revés. Mis programas nunca te aburren.' },
+        { n: '03', t: 'Entrena donde sea, con lo que sea', d: 'De vacaciones, en el gimnasio de un hotel o en una banca del parque, donde estés, armo el plan con lo que tengas.' },
+        { n: '04', t: 'HIIT y movilidad', d: 'HIIT en vivo para quemar grasa, más movilidad pensada para articulaciones con kilómetros recorridos, para construir una fuerza que dura.' },
+        { n: '05', t: 'Nutrición y pérdida de grasa', d: 'Baja de peso, tonifica o gana músculo con una nutrición que sí puedes mantener, para verte mejor con ropa (y sin ella).' },
+        { n: '06', t: 'Responsabilidad real', d: 'Un horario fijo solo para ti, con alguien que de verdad nota si no te presentas. Eso es lo que convierte las buenas intenciones en hábito.' },
+      ],
+      programsKicker: 'Coaching', programsTitle: 'Elige tu ritmo',
+      programsSub: 'Sesiones de coaching virtual 1:1 por semana. Cada plan es totalmente personalizado a tu cuerpo y objetivos.',
+      tierNames: ['Inicial', 'Compañero', 'Compromiso', 'Sin Límites'],
+      tierFreqs: ['1 sesión / semana', '2 sesiones / semana', '3 sesiones / semana', '4 sesiones / semana'],
+      tierPrices: ['$150', '$300', '$450', '$600'], per: '/mes',
+      tierFeats: [
+        ['Programa de entrenamiento personalizado', 'Sesión 1:1 semanal por video', 'Guía de nutrición', 'Soporte por chat'],
+        ['Todo lo de Inicial', 'Dos sesiones 1:1 semanales', 'Revisión continua de técnica', 'Seguimiento de hábitos'],
+        ['Todo lo de Progreso', 'Tres sesiones 1:1 semanales', 'Llamada semanal de seguimiento', 'Soporte prioritario'],
+        ['Todo lo de Acelera', 'Cuatro sesiones 1:1 semanales', 'Plan de nutrición completo', 'Chequeos diarios'],
+      ],
+      resultsKicker: 'Resultados', resultsTitle: 'Hombres reales. Cambios reales.',
+      before: 'ANTES', after: 'DESPUÉS', tFront: 'De frente · transformación de 2 años', tBack: 'De espalda · transformación de 2 años', tTag: 'Grasa + músculo',
+      transforms: [
+        { name: 'Marcus, 47', weeks: '16 semanas', tag: 'Recomposición' },
+        { name: 'David, 52', weeks: '20 semanas', tag: 'Pérdida de grasa' },
+        { name: 'Jon, 44', weeks: '24 semanas', tag: 'Ganancia muscular' },
+      ],
+      testimonials: [
+        { q: 'Entrenar con Alexander es maravilloso, lo hace entretenido y es un entrenamiento buenísimo. Es la razón por la que retomé el entrenamiento de fuerza.', n: 'Cathy M.' },
+        { q: 'Alexander hizo un trabajo hermoso trabajando cada músculo, un buen calentamiento, explicaciones claras y adaptaciones para tu nivel, seas quien seas. Un entrenamiento de una hora buenísimo.', n: 'Nancy C.' },
+        { q: 'Nos enfocamos en la conexión mente-músculo de cada movimiento, además de la intensidad y la técnica correcta. Me ayudó a mejorar mis entrenamientos en el gimnasio de mi garaje. ¡Muy recomendable!', n: 'Rak J.' },
+      ],
+      applyKicker: 'Aplica', applyTitle: '¿Listo para ir más allá de tus límites?',
+      applySub: 'Cuéntame tus objetivos y te contactaré para agendar una llamada gratis. Sin presión y sin juicios, solo una conversación real antes de empezar.',
+      contactDirect: 'O contáctame directamente',
+      fName: 'Nombre completo', fEmail: 'Correo', fGoal: 'Tu objetivo principal', fExp: 'Nivel de experiencia', fFreq: 'Sesiones por semana que quieres',
+      expOptions: ['Principiante', 'Intermedio', 'Avanzado'],
+      submit: 'Aplica para coaching', sentTitle: '¡Solicitud recibida!',
+      sentBody: 'Tu WhatsApp se abrió con tus datos ya escritos, dale enviar y te responderé en menos de 24 horas para agendar tu llamada.',
+      footerTag: 'Coaching online para hombres, en todo el mundo.',
+      faqKicker: 'Preguntas', faqTitle: 'Bueno saberlo',
+      motoKicker: 'Fuera del gimnasio', motoLine: 'La misma intensidad, sobre la moto y bajo la barra.',
+      faq: [
+        { q: '¿Cómo empezamos?', a: 'Con una llamada breve para conocer tus objetivos y confirmar que somos buen match antes de tu primera sesión.' },
+        { q: 'Estoy fuera de forma o tengo una lesión vieja. ¿Puedo hacerlo igual?', a: 'Claro que sí, sin importar tu edad o tu forma física, empezamos desde donde estás. El programa se ajusta a tu cuerpo en tiempo real, pensado para lesiones y articulaciones, no un plan genérico igual para todos. Y sin juicios sobre tu punto de partida.' },
+        { q: '¿Necesito equipo?', a: 'No. Programo para gimnasio completo, algo de equipo en casa o sin nada, y adapto tu entrenamiento donde estés, incluso viajando.' },
+        { q: '¿Puedo reagendar o cancelar una sesión?', a: 'Sí, avisando con más de 24 horas. Dentro de las 24 horas, esa sesión se pierde.' },
+        { q: '¿Las sesiones sin usar expiran?', a: 'Una sesión aplazada queda disponible 30 días desde su fecha original; luego expira.' },
+        { q: '¿Reembolsos o pausas?', a: 'No hay reembolsos por meses parciales. Si necesitas una pausa de un mes o más, puedo poner tu plan en pausa.' },
+      ],
+      formStepLabel: 'Paso', formOf: 'de', back: 'Atrás', next: 'Siguiente',
+      step1Title: 'Tus datos', step2Title: 'Tu objetivo', step3Title: 'Tu entrenamiento', step4Title: 'Ya casi',
+      fWa: 'WhatsApp / teléfono',
+      fGoalQ: '¿Qué es lo que más quieres?', fExpQ: '¿Cuánto llevas entrenando en serio?',
+      fFreqQ: 'Sesiones por semana', fDaysQ: 'Días que puedes entrenar', fEquipQ: 'Acceso a equipo',
+      fNotes: '¿Lesiones, horario o algo más que deba saber?',
+      goalOptions: ['Perder grasa', 'Ganar músculo', 'Recomposición', 'Más fuerza'],
+      daysOptions: ['2–3 días', '4–5 días', '6+ días'],
+      equipOptions: ['Gimnasio completo', 'Básico en casa', 'Solo peso corporal'],
+      fChallengeQ: '¿Qué te está frenando ahora mismo?',
+      challengeOptions: ['No logro ser constante', 'Me preocupa lesionarme / el dolor', 'No sé cómo progresar', 'Estancado en una meseta', 'Sin tiempo / necesito estructura'],
+      fWhyQ: '¿Por qué aplicas para coaching justo ahora?',
+    };
+    const base = this.L() === 'es' ? es : en;
+    return { ...base, showPrices };
+  }
+
+  stepIcon(i) {
+    const h = React.createElement;
+    const svg = (kids) => h('svg', { width: 27, height: 27, viewBox: '0 0 24 24', fill: 'none', stroke: '#fff', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' }, kids);
+    const icons = [
+      svg([ h('rect', { key: 1, x: 2, y: 6, width: 14, height: 12, rx: 2 }), h('path', { key: 2, d: 'M16 10l6-3v10l-6-3z' }) ]),
+      svg([ h('path', { key: 1, d: 'M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z' }), h('circle', { key: 2, cx: 12, cy: 12, r: 3 }) ]),
+      svg([ h('path', { key: 1, d: 'M3 21h18' }), h('path', { key: 2, d: 'M6 21V11' }), h('path', { key: 3, d: 'M12 21V4' }), h('path', { key: 4, d: 'M18 21v-7' }) ]),
+      svg([ h('polyline', { key: 1, points: '3 17 9 11 13 15 21 6' }), h('polyline', { key: 2, points: '15 6 21 6 21 12' }) ]),
+    ];
+    return icons[i] || icons[0];
+  }
+
+  renderVals() {
+    const lang = this.L();
+    const d = this.data();
+    const featured = 1;
+    const tiers = d.tierNames.map((name, i) => ({
+      name,
+      freq: d.tierFreqs[i],
+      price: d.showPrices ? d.tierPrices[i] : (lang === 'es' ? 'A medida' : 'Custom'),
+      per: d.showPrices ? d.per : '',
+      feats: d.tierFeats[i],
+      badgeVis: i === featured ? 'visible' : 'hidden',
+      bg: i === featured ? '#fff4ec' : '#ffffff',
+      border: i === featured ? '#ef5f28' : '#ece2d2',
+      shadow: i === featured ? '0 16px 34px rgba(239,95,40,.16)' : '0 6px 18px rgba(120,90,50,.06)',
+      btnBg: i === featured ? '#ef5f28' : 'transparent',
+      btnColor: i === featured ? '#fff' : '#ef5f28',
+    }));
+    const transforms = d.transforms.map(tr => ({ ...tr, beforeLbl: d.before, afterLbl: d.after }));
+
+    const f = this.state.form;
+    const step = this.state.step;
+    const BASE = 'padding:11px 16px; border-radius:22px; border:1px solid #e2d6c4; background:#fff; color:#5c5348; font-size:15px; cursor:pointer; font-family:inherit;';
+    const SEL = 'padding:11px 16px; border-radius:22px; border:1px solid #ef5f28; background:#ef5f28; color:#fff; font-size:15px; cursor:pointer; font-family:inherit; box-shadow:0 8px 18px rgba(239,95,40,.22);';
+    const chip = (field, opts) => opts.map(o => ({ label: o, onClick: () => this.setState(s => ({ form: { ...s.form, [field]: o } })), style: f[field] === o ? SEL : BASE }));
+    const onField = (k) => (e) => { const v = e.target.value; this.setState(s => ({ form: { ...s.form, [k]: v } })); };
+    const canNext = step === 1 ? !!(f.name.trim() && f.email.trim() && f.wa.trim()) : step === 2 ? !!(f.goal && f.exp) : step === 3 ? !!f.freq : true;
+    const stepTitles = [d.step1Title, d.step2Title, d.step3Title, d.step4Title];
+    const nextBase = 'cursor:pointer; background:#ef5f28; color:#fff; border:none; font-weight:700; padding:15px 30px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit; box-shadow:0 10px 22px rgba(239,95,40,.24);';
+    const nextDim = 'cursor:not-allowed; background:#f2ccb9; color:#fff; border:none; font-weight:700; padding:15px 30px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit;';
+
+    return {
+      t: d,
+      lang,
+      ctaHref: this.props.calendlyUrl || '#apply',
+      ctaTarget: this.props.calendlyUrl ? '_blank' : undefined,
+      otherLangLabel: lang === 'en' ? 'ES' : 'EN',
+      toggleLang: () => this.setState({ lang: lang === 'en' ? 'es' : 'en' }),
+      tiers,
+      pillars: d.pillars,
+      howSteps: d.howSteps.map((s, i) => ({ ...s, icon: this.stepIcon(i) })),
+      faq: d.faq,
+      faqItems: (d.faq || []).map((it, i) => ({ q: it.q, a: it.a, openClass: this.state.faqOpen === i ? 'open' : '', onClick: () => this.setState(s => ({ faqOpen: s.faqOpen === i ? -1 : i })) })),
+      transforms,
+      testimonials: d.testimonials,
+      form: f,
+      step,
+      isStep1: step === 1, isStep2: step === 2, isStep3: step === 3, isStep4: step === 4,
+      showNext: step < 4, canBack: step > 1,
+      pct: (step / 4 * 100) + '%',
+      stepLabelText: d.formStepLabel + ' ' + step + ' ' + d.formOf + ' 4',
+      stepTitle: stepTitles[step - 1],
+      onName: onField('name'), onEmail: onField('email'), onWa: onField('wa'), onNotes: onField('notes'),
+      goalChips: chip('goal', d.goalOptions),
+      expChips: chip('exp', d.expOptions),
+      freqChips: chip('freq', d.tierFreqs),
+      daysChips: chip('days', d.daysOptions),
+      equipChips: chip('equip', d.equipOptions),
+      challengeChips: chip('challenge', d.challengeOptions),
+      onWhy: onField('why'),
+      next: () => { if (canNext) this.setState(s => ({ step: Math.min(4, s.step + 1) })); },
+      back: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
+      nextStyle: canNext ? nextBase : nextDim,
+      nextDisabled: !canNext,
+      submit: () => {
+        const g = this.state.form;
+        const rows = [
+          'New coaching application',
+          'Name: ' + g.name,
+          'Email: ' + g.email,
+          'Phone/WhatsApp: ' + g.wa,
+          g.goal && 'Goal: ' + g.goal,
+          g.exp && 'Experience: ' + g.exp,
+          g.challenge && 'Biggest challenge: ' + g.challenge,
+          g.freq && 'Sessions/week: ' + g.freq,
+          g.days && 'Days available: ' + g.days,
+          g.equip && 'Equipment: ' + g.equip,
+          g.why && 'Why now: ' + g.why,
+          g.notes && 'Notes: ' + g.notes,
+        ].filter(Boolean);
+        window.open('https://wa.me/584123139890?text=' + encodeURIComponent(rows.join('\n')), '_blank');
+        this.setState({ sent: true });
+      },
+      sent: this.state.sent, notSent: !this.state.sent,
+      galleryImages: this.galleryImages.map((img, i) => ({ ...img, onClick: () => this.setState({ lightbox: i }), imgRef: (el) => { if (el) el.src = this.resolvedGallerySrc(i); } })),
+      galleryRef: this.galleryRef,
+      galleryPrev: () => { const el = this.galleryRef.current; if (el) el.scrollBy({ left: -320, behavior: 'smooth' }); },
+      galleryNext: () => { const el = this.galleryRef.current; if (el) el.scrollBy({ left: 320, behavior: 'smooth' }); },
+      lightboxOpen: this.state.lightbox !== null,
+      lightboxImgRef: (el) => { if (el && this.state.lightbox !== null) el.src = this.resolvedGallerySrc(this.state.lightbox); },
+      lightboxAlt: this.state.lightbox !== null ? this.galleryImages[this.state.lightbox].alt : '',
+      closeLightbox: (e) => { if (e.target === e.currentTarget) this.setState({ lightbox: null }); },
+      closeLightboxBtn: () => this.setState({ lightbox: null }),
+      lightboxPrev: () => this.setState(s => ({ lightbox: (s.lightbox - 1 + this.galleryImages.length) % this.galleryImages.length })),
+      lightboxNext: () => this.setState(s => ({ lightbox: (s.lightbox + 1) % this.galleryImages.length })),
+    };
+  }
+}
+</script>
+
+
+</body></html>
