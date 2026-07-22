@@ -635,7 +635,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;http://calendly.com/ajbzfit&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/ajbzfit&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
   state = { lang: null, sent: false, error: false, step: 1, faqOpen: 0, lightbox: null, form: { name: '', email: '', wa: '', goal: '', exp: '', freq: '', days: '', equip: '', challenge: '', why: '', notes: '' } };
 
@@ -670,14 +670,14 @@ class Component extends DCLogic {
   galleryRef = React.createRef();
 
   galleryImages = [
-    { src: 'uploads/die 2 - Copy.jpg', alt: 'Alexander Barrera, nutrition', pos: 'center' },
-    { src: 'uploads/gouveiandres_20211116_095239.jpg', alt: 'Alexander Barrera competing', pos: 'center 20%' },
-    { src: 'uploads/pasted-1783287014380-0.png', alt: 'Alexander Barrera', pos: 'center 15%' },
-    { src: 'gallery-5.jpg', alt: 'Alexander celebrating with motorcycles', pos: 'center' },
-    { src: 'gallery-6.jpg', alt: 'Alexander with guitar', pos: 'center' },
-    { src: 'uploads/pasted-1783291687641-0.png', alt: 'Alexander holding the Venezuelan flag on the beach', pos: 'center' },
-    { src: 'uploads/pasted-1784240778676-0.png', alt: 'Alexander Barrera, certified personal trainer', pos: 'center 20%' },
-    { src: 'uploads/pasted-1783304751897-0.png', alt: 'Alexander Barrera training outdoors', pos: 'center' },
+    { src: 'assets/eccd113a-4a84-427f-b646-dfd2f76b3957.webp', alt: 'Alexander Barrera, nutrition', pos: 'center' },
+    { src: 'assets/b7993583-e519-4293-b331-242a985e5e52.webp', alt: 'Alexander Barrera competing', pos: 'center 20%' },
+    { src: 'assets/525c0a07-e140-46f1-ba6a-9839d7c1f09f.webp', alt: 'Alexander Barrera', pos: 'center 15%' },
+    { src: 'assets/e8c1c6ec-237b-4499-96f0-1aa6e84bd634.webp', alt: 'Alexander celebrating with motorcycles', pos: 'center' },
+    { src: 'assets/1916bc7e-ab7f-4e09-82db-87733ce56c2a.webp', alt: 'Alexander with guitar', pos: 'center' },
+    { src: 'assets/fa67ddc5-5a20-41d3-9f57-c846f5733d35.webp', alt: 'Alexander holding the Venezuelan flag on the beach', pos: 'center' },
+    { src: 'assets/fb0dc91e-5b68-40dd-b865-dadb436431d0.webp', alt: 'Alexander Barrera, certified personal trainer', pos: 'center 20%' },
+    { src: 'assets/bdffe52e-a773-4ff6-9ee1-4c2d0baca8f4.webp', alt: 'Alexander Barrera training outdoors', pos: 'center' },
   ];
 
   L() { return this.state.lang || this.props.defaultLang || 'en'; }
@@ -903,7 +903,7 @@ class Component extends DCLogic {
     return {
       t: d,
       lang,
-      ctaHref: this.props.calendlyUrl || 'http://calendly.com/ajbzfit',
+      ctaHref: this.props.calendlyUrl || 'https://calendly.com/ajbzfit',
       ctaTarget: '_blank',
       otherLangLabel: lang === 'en' ? 'ES' : 'EN',
       toggleLang: () => this.setState({ lang: lang === 'en' ? 'es' : 'en' }),
