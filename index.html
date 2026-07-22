@@ -146,6 +146,7 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 </style>
+<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 <link rel="icon" type="image/png" href="assets/15f820f8-810e-4522-9963-91e37d3da817.png">
 <title>Alexander Barrera — Coaching for Men</title>
 <meta name="description" content="Online fitness coaching for men. Train 1:1 with a real training partner, not an app — build a strong, lean body with weekly live sessions and true accountability.">
@@ -237,7 +238,7 @@
     <div class="navcta" style="display:flex; align-items:center; gap:26px; font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#726558;">
       <a href="#method" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navMethod }}</a><a href="#coaching" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navCoaching }}</a><a href="#results" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navResults }}</a>
       <button sc-camel-on-click="{{ toggleLang }}" style="cursor:pointer; background:transparent; color:#201a15; border:1px solid #d9cdb9; border-radius:20px; padding:7px 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:13px; letter-spacing:.1em;">{{ otherLangLabel }}</button>
-      <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:11px 20px; border-radius:22px; text-transform:uppercase; letter-spacing:.06em; font-size:13px;">{{ t.apply }}</a>
+      <a href="#apply" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:11px 20px; border-radius:22px; text-transform:uppercase; letter-spacing:.06em; font-size:13px;">{{ t.apply }}</a>
     </div>
   </div>
 
@@ -250,7 +251,7 @@
         <h1 class="hh1" style="font-family:'Anton',sans-serif; font-weight:400; font-size:92px; line-height:.9; margin:0 0 24px; letter-spacing:.005em;">{{ t.heroTitle }}</h1>
         <p style="font-size:21px; line-height:1.5; color:#5c5348; max-width:29em; margin:0 0 34px;">{{ t.heroSub }}</p>
         <div style="display:flex; gap:16px; align-items:center;">
-          <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:17px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.07em; font-size:15px; box-shadow:0 12px 26px rgba(239,95,40,.28);">{{ t.applyCta }}</a>
+          <a href="#apply" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:17px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.07em; font-size:15px; box-shadow:0 12px 26px rgba(239,95,40,.28);">{{ t.applyCta }}</a>
           <a href="#results" style="text-decoration:none; color:#201a15; font-weight:600; padding:16px 6px; text-transform:uppercase; letter-spacing:.08em; font-size:14px; border-bottom:2px solid #e0d3bf;">{{ t.navResults }}</a>
         </div>
       </div>
@@ -405,7 +406,7 @@
               <div style="display:flex; gap:9px; font-size:16px; line-height:1.45; color:#5c5348;"><span style="color:#ef5f28; font-weight:700;">/</span><span>{{ f }}</span></div>
             </sc-for>
           </div>
-          <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" class="cta-btn" style="margin-top:auto; text-align:center; text-decoration:none; padding:13px; border-radius:24px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #ef5f28;">{{ t.apply }}</a>
+          <a href="#apply" class="cta-btn" style="margin-top:auto; text-align:center; text-decoration:none; padding:13px; border-radius:24px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #ef5f28;">{{ t.apply }}</a>
         </div>
       </sc-for>
     </div>
@@ -603,7 +604,8 @@
         <sc-if value="{{ sent }}">
           <div style="border:1px solid #f3c3a6; border-radius:16px; padding:44px; background:#fff4ec; text-align:center;">
             <div style="font-family:'Anton',sans-serif; font-size:32px; color:#ef5f28; margin-bottom:10px;">{{ t.sentTitle }}</div>
-            <p style="font-size:17px; color:#5c5348; margin:0;">{{ t.sentBody }}</p>
+            <p style="font-size:17px; color:#5c5348; margin:0 0 28px;">{{ t.sentBody }}</p>
+            <div ref="{{ calendlyEmbedRef }}" style="min-width:320px; height:700px; border-radius:12px; overflow:hidden;"></div>
           </div>
         </sc-if>
       </div>
@@ -738,12 +740,12 @@ class Component extends DCLogic {
         { q: "We focused on the mind-muscle connection of every movement, plus intensity and proper form. It's helped me level up my garage gym workouts. Highly recommend!", n: 'Rak J.' },
       ],
       applyKicker: 'Apply', applyTitle: 'Ready to go beyond your limits?',
-      applySub: "Tell me about your goals and I'll reach out to schedule a free intro call. No pressure, no judgment, just a real conversation before we start.",
+      applySub: "Tell me about your goals, then pick a time for your free intro call right after. No pressure, no judgment, just a real conversation before we start.",
       contactDirect: 'Or reach me directly',
       fName: 'Full name', fEmail: 'Email', fGoal: 'Your main goal', fExp: 'Experience level', fFreq: 'Sessions per week you want',
       expOptions: ['Beginner', 'Intermediate', 'Advanced'],
       submit: 'Apply for coaching', sentTitle: 'Application received!',
-      sentBody: "Thanks for your application. I'll reply within 24 hours to book your free intro call.",
+      sentBody: "Your survey responses are on their way to my inbox. Now pick a time below to book your free intro call.",
       submitError: "Something went wrong sending your application. Please try again, or reach me directly via WhatsApp below.",
       footerTag: 'Online coaching for men, worldwide.',
       faqKicker: 'FAQ', faqTitle: 'Good to know',
@@ -823,12 +825,12 @@ class Component extends DCLogic {
         { q: 'Nos enfocamos en la conexión mente-músculo de cada movimiento, además de la intensidad y la técnica correcta. Me ayudó a mejorar mis entrenamientos en el gimnasio de mi garaje. ¡Muy recomendable!', n: 'Rak J.' },
       ],
       applyKicker: 'Aplica', applyTitle: '¿Listo para ir más allá de tus límites?',
-      applySub: 'Cuéntame tus objetivos y te contactaré para agendar una llamada gratis. Sin presión y sin juicios, solo una conversación real antes de empezar.',
+      applySub: 'Cuéntame tus objetivos y elige un horario para tu llamada gratis justo después. Sin presión y sin juicios, solo una conversación real antes de empezar.',
       contactDirect: 'O contáctame directamente',
       fName: 'Nombre completo', fEmail: 'Correo', fGoal: 'Tu objetivo principal', fExp: 'Nivel de experiencia', fFreq: 'Sesiones por semana que quieres',
       expOptions: ['Principiante', 'Intermedio', 'Avanzado'],
       submit: 'Aplica para coaching', sentTitle: '¡Solicitud recibida!',
-      sentBody: 'Gracias por tu solicitud. Te responderé en menos de 24 horas para agendar tu llamada gratis.',
+      sentBody: 'Tus respuestas van camino a mi bandeja. Ahora elige un horario abajo para agendar tu llamada gratis.',
       submitError: 'Algo salió mal al enviar tu solicitud. Intenta de nuevo, o escríbeme directamente por WhatsApp abajo.',
       footerTag: 'Coaching online para hombres, en todo el mundo.',
       faqKicker: 'Preguntas', faqTitle: 'Bueno saberlo',
@@ -903,8 +905,34 @@ class Component extends DCLogic {
     return {
       t: d,
       lang,
-      ctaHref: this.props.calendlyUrl || 'https://calendly.com/ajbzfit',
-      ctaTarget: '_blank',
+      calendlyEmbedRef: (el) => {
+        if (!el || el._calendlyInit) return;
+        el._calendlyInit = true;
+        const url = this.props.calendlyUrl || 'https://calendly.com/ajbzfit';
+        const f = this.state.form;
+        const init = () => {
+          if (window.Calendly) {
+            window.Calendly.initInlineWidget({
+              url: url,
+              parentElement: el,
+              prefill: { name: f.name, email: f.email }
+            });
+          }
+        };
+        if (window.Calendly) { init(); return; }
+        if (!window._calendlyLoading) {
+          window._calendlyLoading = true;
+          const s = document.createElement('script');
+          s.src = 'https://assets.calendly.com/assets/external/widget.js';
+          s.async = true;
+          s.onload = init;
+          document.head.appendChild(s);
+        } else {
+          const check = setInterval(() => {
+            if (window.Calendly) { clearInterval(check); init(); }
+          }, 200);
+        }
+      },
       otherLangLabel: lang === 'en' ? 'ES' : 'EN',
       toggleLang: () => this.setState({ lang: lang === 'en' ? 'es' : 'en' }),
       tiers,
