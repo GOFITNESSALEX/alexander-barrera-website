@@ -168,8 +168,8 @@
   img { max-width: 100%; }
   html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
   a, button { transition: transform .18s ease, box-shadow .25s ease, background-color .2s ease, color .18s ease, border-color .2s ease; }
-  a[href="#apply"]:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(239,95,40,.32) !important; }
-  a[href="#apply"]:active { transform: translateY(0); }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(239,95,40,.32) !important; }
+  .cta-btn:active { transform: translateY(0); }
   a[href="#results"]:hover { color: #ef5f28 !important; border-bottom-color: #ef5f28 !important; }
   .navbar { box-shadow: 0 2px 22px rgba(120,90,50,.05); }
   .navlink { position: relative; }
@@ -191,7 +191,7 @@
   .gallery-tile:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(120,90,50,.18) !important; }
   .gallery-arrow:hover { background: #ef5f28 !important; color: #fff !important; border-color: #ef5f28 !important; }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid #0037a1; outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { a[href="#apply"]:hover, .pcard:hover, .qcard:hover, .tcard:hover { transform:none !important; } .faq-ans, .faq-ico { transition:none !important; } }
+  @media (prefers-reduced-motion: reduce) { .cta-btn:hover, .pcard:hover, .qcard:hover, .tcard:hover { transform:none !important; } .faq-ans, .faq-ico { transition:none !important; } }
   @media (max-width: 860px) {
     .col2 { grid-template-columns: 1fr !important; }
     .col4 { grid-template-columns: 1fr 1fr !important; }
@@ -237,7 +237,7 @@
     <div class="navcta" style="display:flex; align-items:center; gap:26px; font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#726558;">
       <a href="#method" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navMethod }}</a><a href="#coaching" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navCoaching }}</a><a href="#results" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navResults }}</a>
       <button sc-camel-on-click="{{ toggleLang }}" style="cursor:pointer; background:transparent; color:#201a15; border:1px solid #d9cdb9; border-radius:20px; padding:7px 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:13px; letter-spacing:.1em;">{{ otherLangLabel }}</button>
-      <a href="#apply" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:11px 20px; border-radius:22px; text-transform:uppercase; letter-spacing:.06em; font-size:13px;">{{ t.apply }}</a>
+      <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:11px 20px; border-radius:22px; text-transform:uppercase; letter-spacing:.06em; font-size:13px;">{{ t.apply }}</a>
     </div>
   </div>
 
@@ -250,7 +250,7 @@
         <h1 class="hh1" style="font-family:'Anton',sans-serif; font-weight:400; font-size:92px; line-height:.9; margin:0 0 24px; letter-spacing:.005em;">{{ t.heroTitle }}</h1>
         <p style="font-size:21px; line-height:1.5; color:#5c5348; max-width:29em; margin:0 0 34px;">{{ t.heroSub }}</p>
         <div style="display:flex; gap:16px; align-items:center;">
-          <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:17px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.07em; font-size:15px; box-shadow:0 12px 26px rgba(239,95,40,.28);">{{ t.applyCta }}</a>
+          <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:17px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.07em; font-size:15px; box-shadow:0 12px 26px rgba(239,95,40,.28);">{{ t.applyCta }}</a>
           <a href="#results" style="text-decoration:none; color:#201a15; font-weight:600; padding:16px 6px; text-transform:uppercase; letter-spacing:.08em; font-size:14px; border-bottom:2px solid #e0d3bf;">{{ t.navResults }}</a>
         </div>
       </div>
@@ -405,7 +405,7 @@
               <div style="display:flex; gap:9px; font-size:16px; line-height:1.45; color:#5c5348;"><span style="color:#ef5f28; font-weight:700;">/</span><span>{{ f }}</span></div>
             </sc-for>
           </div>
-          <a href="#apply" style="margin-top:auto; text-align:center; text-decoration:none; padding:13px; border-radius:24px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #ef5f28;">{{ t.apply }}</a>
+          <a href="{{ ctaHref }}" target="{{ ctaTarget }}" rel="noopener" class="cta-btn" style="margin-top:auto; text-align:center; text-decoration:none; padding:13px; border-radius:24px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #ef5f28;">{{ t.apply }}</a>
         </div>
       </sc-for>
     </div>
@@ -498,7 +498,15 @@
       </div>
       <div>
         <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form method="POST" action="https://formspree.io/f/xgogzqol" sc-camel-on-submit="{{ submit }}">
           <div style="background:#fff; border:1px solid #ece2d2; border-radius:18px; padding:30px; box-shadow:0 14px 34px rgba(120,90,50,.10);">
+            <input type="hidden" name="source" value="Alexander Barrera website">
+            <input type="hidden" name="goal" value="{{ form.goal }}">
+            <input type="hidden" name="experience" value="{{ form.exp }}">
+            <input type="hidden" name="challenge" value="{{ form.challenge }}">
+            <input type="hidden" name="frequency" value="{{ form.freq }}">
+            <input type="hidden" name="days" value="{{ form.days }}">
+            <input type="hidden" name="equipment" value="{{ form.equip }}">
             <div style="display:flex; justify-content:space-between; align-items:baseline;">
               <span style="font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:#8a7d6d;">{{ stepLabelText }}</span>
               <span style="font-family:'Anton',sans-serif; font-size:22px; color:#201a15;">{{ stepTitle }}</span>
@@ -509,9 +517,9 @@
 
             <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
               <div style="display:flex; flex-direction:column; gap:14px;">
-                <input value="{{ form.name }}" sc-camel-on-change="{{ onName }}" placeholder="{{ t.fName }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
-                <input value="{{ form.email }}" sc-camel-on-change="{{ onEmail }}" type="email" placeholder="{{ t.fEmail }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
-                <input value="{{ form.wa }}" sc-camel-on-change="{{ onWa }}" placeholder="{{ t.fWa }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+                <input name="name" value="{{ form.name }}" sc-camel-on-change="{{ onName }}" placeholder="{{ t.fName }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+                <input name="email" value="{{ form.email }}" sc-camel-on-change="{{ onEmail }}" type="email" placeholder="{{ t.fEmail }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+                <input name="phone" value="{{ form.wa }}" sc-camel-on-change="{{ onWa }}" placeholder="{{ t.fWa }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
               </div>
             </sc-if>
 
@@ -565,11 +573,11 @@
               <div style="display:flex; flex-direction:column; gap:20px;">
                 <div>
                   <div style="font-size:15px; font-weight:600; margin-bottom:10px;">{{ t.fWhyQ }}</div>
-                  <textarea value="{{ form.why }}" sc-camel-on-change="{{ onWhy }}" rows="3" placeholder="{{ t.fWhyQ }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
+                  <textarea name="why" value="{{ form.why }}" sc-camel-on-change="{{ onWhy }}" rows="3" placeholder="{{ t.fWhyQ }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
                 </div>
                 <div>
                   <div style="font-size:15px; font-weight:600; margin-bottom:10px;">{{ t.fNotes }}</div>
-                  <textarea value="{{ form.notes }}" sc-camel-on-change="{{ onNotes }}" rows="3" placeholder="{{ t.fNotes }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
+                  <textarea name="notes" value="{{ form.notes }}" sc-camel-on-change="{{ onNotes }}" rows="3" placeholder="{{ t.fNotes }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
                 </div>
               </div>
             </sc-if>
@@ -583,10 +591,14 @@
                 <button type="button" sc-camel-on-click="{{ next }}" disabled="{{ nextDisabled }}" style="{{ nextStyle }}">{{ t.next }}</button>
               </sc-if>
               <sc-if value="{{ isStep4 }}">
-                <button type="button" sc-camel-on-click="{{ submit }}" style="cursor:pointer; background:#ef5f28; color:#fff; border:none; font-weight:700; padding:15px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit; box-shadow:0 10px 22px rgba(239,95,40,.24);">{{ t.submit }}</button>
+                <button type="submit" style="cursor:pointer; background:#ef5f28; color:#fff; border:none; font-weight:700; padding:15px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit; box-shadow:0 10px 22px rgba(239,95,40,.24);">{{ t.submit }}</button>
               </sc-if>
             </div>
+            <sc-if value="{{ error }}">
+              <div style="margin-top:16px; padding:14px 18px; background:#fff0ee; border:1px solid #f3c3a6; border-radius:10px; font-size:15px; color:#a8420d;">{{ t.submitError }}</div>
+            </sc-if>
           </div>
+          </form>
         </sc-if>
         <sc-if value="{{ sent }}">
           <div style="border:1px solid #f3c3a6; border-radius:16px; padding:44px; background:#fff4ec; text-align:center;">
@@ -623,9 +635,9 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;http://calendly.com/ajbzfit&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
-  state = { lang: null, sent: false, step: 1, faqOpen: 0, lightbox: null, form: { name: '', email: '', wa: '', goal: '', exp: '', freq: '', days: '', equip: '', challenge: '', why: '', notes: '' } };
+  state = { lang: null, sent: false, error: false, step: 1, faqOpen: 0, lightbox: null, form: { name: '', email: '', wa: '', goal: '', exp: '', freq: '', days: '', equip: '', challenge: '', why: '', notes: '' } };
 
   componentDidMount() {
     this._onGalleryKey = (e) => {
@@ -731,7 +743,8 @@ class Component extends DCLogic {
       fName: 'Full name', fEmail: 'Email', fGoal: 'Your main goal', fExp: 'Experience level', fFreq: 'Sessions per week you want',
       expOptions: ['Beginner', 'Intermediate', 'Advanced'],
       submit: 'Apply for coaching', sentTitle: 'Application received!',
-      sentBody: "Your WhatsApp just opened with your details filled in, hit send and I'll reply within 24 hours to book your call.",
+      sentBody: "Thanks for your application. I'll reply within 24 hours to book your free intro call.",
+      submitError: "Something went wrong sending your application. Please try again, or reach me directly via WhatsApp below.",
       footerTag: 'Online coaching for men, worldwide.',
       faqKicker: 'FAQ', faqTitle: 'Good to know',
       motoKicker: 'Off the clock', motoLine: 'Same intensity, on the bike and under the bar.',
@@ -815,7 +828,8 @@ class Component extends DCLogic {
       fName: 'Nombre completo', fEmail: 'Correo', fGoal: 'Tu objetivo principal', fExp: 'Nivel de experiencia', fFreq: 'Sesiones por semana que quieres',
       expOptions: ['Principiante', 'Intermedio', 'Avanzado'],
       submit: 'Aplica para coaching', sentTitle: '¡Solicitud recibida!',
-      sentBody: 'Tu WhatsApp se abrió con tus datos ya escritos, dale enviar y te responderé en menos de 24 horas para agendar tu llamada.',
+      sentBody: 'Gracias por tu solicitud. Te responderé en menos de 24 horas para agendar tu llamada gratis.',
+      submitError: 'Algo salió mal al enviar tu solicitud. Intenta de nuevo, o escríbeme directamente por WhatsApp abajo.',
       footerTag: 'Coaching online para hombres, en todo el mundo.',
       faqKicker: 'Preguntas', faqTitle: 'Bueno saberlo',
       motoKicker: 'Fuera del gimnasio', motoLine: 'La misma intensidad, sobre la moto y bajo la barra.',
@@ -889,8 +903,8 @@ class Component extends DCLogic {
     return {
       t: d,
       lang,
-      ctaHref: this.props.calendlyUrl || '#apply',
-      ctaTarget: this.props.calendlyUrl ? '_blank' : undefined,
+      ctaHref: this.props.calendlyUrl || 'http://calendly.com/ajbzfit',
+      ctaTarget: '_blank',
       otherLangLabel: lang === 'en' ? 'ES' : 'EN',
       toggleLang: () => this.setState({ lang: lang === 'en' ? 'es' : 'en' }),
       tiers,
@@ -919,26 +933,21 @@ class Component extends DCLogic {
       back: () => this.setState(s => ({ step: Math.max(1, s.step - 1) })),
       nextStyle: canNext ? nextBase : nextDim,
       nextDisabled: !canNext,
-      submit: () => {
-        const g = this.state.form;
-        const rows = [
-          'New coaching application',
-          'Name: ' + g.name,
-          'Email: ' + g.email,
-          'Phone/WhatsApp: ' + g.wa,
-          g.goal && 'Goal: ' + g.goal,
-          g.exp && 'Experience: ' + g.exp,
-          g.challenge && 'Biggest challenge: ' + g.challenge,
-          g.freq && 'Sessions/week: ' + g.freq,
-          g.days && 'Days available: ' + g.days,
-          g.equip && 'Equipment: ' + g.equip,
-          g.why && 'Why now: ' + g.why,
-          g.notes && 'Notes: ' + g.notes,
-        ].filter(Boolean);
-        window.open('https://wa.me/584123139890?text=' + encodeURIComponent(rows.join('\n')), '_blank');
-        this.setState({ sent: true });
+      submit: (e) => {
+        if (e && e.preventDefault) e.preventDefault();
+        const step = this.state.step;
+        if (step < 4) {
+          const f = this.state.form;
+          const canNext = step === 1 ? !!(f.name.trim() && f.email.trim() && f.wa.trim()) : step === 2 ? !!(f.goal && f.exp) : step === 3 ? !!f.freq : true;
+          if (canNext) this.setState(s => ({ step: Math.min(4, s.step + 1) }));
+          return;
+        }
+        const data = new FormData(e.target);
+        fetch('https://formspree.io/f/xgogzqol', { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then((r) => { if (r.ok) this.setState({ sent: true, error: false }); else this.setState({ error: true }); })
+          .catch(() => this.setState({ error: true }));
       },
-      sent: this.state.sent, notSent: !this.state.sent,
+      sent: this.state.sent, notSent: !this.state.sent, error: this.state.error,
       galleryImages: this.galleryImages.map((img, i) => ({ ...img, onClick: () => this.setState({ lightbox: i }), imgRef: (el) => { if (el) el.src = this.resolvedGallerySrc(i); } })),
       galleryRef: this.galleryRef,
       galleryPrev: () => { const el = this.galleryRef.current; if (el) el.scrollBy({ left: -320, behavior: 'smooth' }); },
