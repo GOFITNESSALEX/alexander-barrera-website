@@ -502,12 +502,22 @@
           <form method="POST" action="https://formspree.io/f/xgogzqol" sc-camel-on-submit="{{ submit }}">
           <div style="background:#fff; border:1px solid #ece2d2; border-radius:18px; padding:30px; box-shadow:0 14px 34px rgba(120,90,50,.10);">
             <input type="hidden" name="source" value="Alexander Barrera website">
+            <input type="hidden" name="name" value="{{ form.name }}">
+            <input type="hidden" name="email" value="{{ form.email }}">
+            <input type="hidden" name="phone" value="{{ form.wa }}">
             <input type="hidden" name="goal" value="{{ form.goal }}">
             <input type="hidden" name="experience" value="{{ form.exp }}">
             <input type="hidden" name="challenge" value="{{ form.challenge }}">
             <input type="hidden" name="frequency" value="{{ form.freq }}">
             <input type="hidden" name="days" value="{{ form.days }}">
             <input type="hidden" name="equipment" value="{{ form.equip }}">
+            <input type="hidden" name="readiness_heart_condition" value="{{ form.health1 }}">
+            <input type="hidden" name="readiness_chest_pain" value="{{ form.health2 }}">
+            <input type="hidden" name="readiness_dizziness_or_fainting" value="{{ form.health3 }}">
+            <input type="hidden" name="readiness_health_condition" value="{{ form.health4 }}">
+            <input type="hidden" name="readiness_medication" value="{{ form.health5 }}">
+            <input type="hidden" name="readiness_pregnancy_injury_or_recovery" value="{{ form.health6 }}">
+            <input type="hidden" name="readiness_other_concern" value="{{ form.health7 }}">
             <div style="display:flex; justify-content:space-between; align-items:baseline;">
               <span style="font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:#8a7d6d;">{{ stepLabelText }}</span>
               <span style="font-family:'Anton',sans-serif; font-size:22px; color:#201a15;">{{ stepTitle }}</span>
@@ -521,6 +531,21 @@
                 <input name="name" value="{{ form.name }}" sc-camel-on-change="{{ onName }}" placeholder="{{ t.fName }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
                 <input name="email" value="{{ form.email }}" sc-camel-on-change="{{ onEmail }}" type="email" placeholder="{{ t.fEmail }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
                 <input name="phone" value="{{ form.wa }}" sc-camel-on-change="{{ onWa }}" placeholder="{{ t.fWa }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px;">
+                <div style="padding:18px; border:1px solid #f3c3a6; border-radius:12px; background:#fff4ec;">
+                  <div style="font-size:15px; font-weight:700; margin-bottom:8px;">{{ t.healthHeading }}</div>
+                  <p style="margin:0 0 16px; font-size:13px; line-height:1.5; color:#5c5348;">{{ t.healthNotice }}</p>
+                  <div style="display:flex; flex-direction:column; gap:14px;">
+                    <sc-for list="{{ healthQuestions }}" as="q" hint-placeholder-count="7">
+                      <label style="display:block; font-size:14px; font-weight:600; color:#201a15;">{{ q.label }}
+                        <select value="{{ q.value }}" sc-camel-on-change="{{ q.onChange }}" style="display:block; width:100%; margin-top:7px; background:#fff; border:1px solid #e2d6c4; color:#201a15; padding:11px; border-radius:8px; font-family:inherit; font-size:14px;">
+                          <option value="">{{ t.healthChoose }}</option>
+                          <option value="No">{{ t.healthNo }}</option>
+                          <option value="Yes">{{ t.healthYes }}</option>
+                        </select>
+                      </label>
+                    </sc-for>
+                  </div>
+                </div>
               </div>
             </sc-if>
 
@@ -580,6 +605,10 @@
                   <div style="font-size:15px; font-weight:600; margin-bottom:10px;">{{ t.fNotes }}</div>
                   <textarea name="notes" value="{{ form.notes }}" sc-camel-on-change="{{ onNotes }}" rows="3" placeholder="{{ t.fNotes }}" style="width:100%; background:#fdfbf7; border:1px solid #e2d6c4; color:#201a15; padding:15px; border-radius:10px; font-family:inherit; font-size:15px; resize:vertical;"></textarea>
                 </div>
+                <div style="display:flex; flex-direction:column; gap:12px; padding-top:2px; font-size:13px; line-height:1.5; color:#5c5348;">
+                  <label style="display:flex; align-items:flex-start; gap:9px; cursor:pointer;"><input type="checkbox" name="training_consent" value="accepted" required style="margin-top:3px; accent-color:#ef5f28;"><span>{{ t.consentPrefix }} <a href="client-consent.html" target="_blank" rel="noopener" style="color:#0037a1; font-weight:700;">{{ t.clientConsent }}</a>.</span></label>
+                  <label style="display:flex; align-items:flex-start; gap:9px; cursor:pointer;"><input type="checkbox" name="privacy_notice" value="accepted" required style="margin-top:3px; accent-color:#ef5f28;"><span>{{ t.privacyPrefix }} <a href="privacy.html" target="_blank" rel="noopener" style="color:#0037a1; font-weight:700;">{{ t.privacyNotice }}</a>.</span></label>
+                </div>
               </div>
             </sc-if>
 
@@ -631,6 +660,7 @@
           <span style="text-transform:uppercase; letter-spacing:.16em; font-size:12px; color:#fff;">Est. 2009 · Venezuela</span>
         </div>
         <span style="text-transform:uppercase; letter-spacing:.12em; font-size:13px; color:#ffe6d3;">{{ t.footerTag }}</span>
+        <div style="display:flex; gap:14px; font-size:12px;"><a href="client-consent.html" style="color:#fff;">{{ t.clientConsent }}</a><a href="privacy.html" style="color:#fff;">{{ t.privacyNotice }}</a></div>
       </div>
     </div>
   </div>
@@ -639,7 +669,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/ajbzfit&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
-  state = { lang: null, sent: false, error: false, step: 1, faqOpen: 0, lightbox: null, form: { name: '', email: '', wa: '', goal: '', exp: '', freq: '', days: '', equip: '', challenge: '', why: '', notes: '' } };
+  state = { lang: null, sent: false, error: false, step: 1, faqOpen: 0, lightbox: null, form: { name: '', email: '', wa: '', goal: '', exp: '', freq: '', days: '', equip: '', challenge: '', why: '', notes: '', health1: '', health2: '', health3: '', health4: '', health5: '', health6: '', health7: '' } };
 
   componentDidMount() {
     this._onGalleryKey = (e) => {
@@ -759,11 +789,14 @@ class Component extends DCLogic {
         { q: 'What about refunds or breaks?', a: 'No refunds for partial months. If you need an extended break of a month or more, I can put your plan on pause.' },
       ],
       formStepLabel: 'Step', formOf: 'of', back: 'Back', next: 'Next',
-      step1Title: 'Your details', step2Title: 'Your goal', step3Title: 'Your training', step4Title: 'Almost there',
+      step1Title: 'Your details & health', step2Title: 'Your goal', step3Title: 'Your training', step4Title: 'Almost there',
       fWa: 'WhatsApp / phone',
+      healthHeading: 'Exercise readiness check', healthNotice: 'These answers are sent with your application so I can review your training needs. This is not medical advice. Speak with a qualified health professional before exercise if you answer Yes to any question.', healthChoose: 'Choose an answer', healthNo: 'No', healthYes: 'Yes',
+      healthQuestions: ['Has a doctor told you that you have a heart condition or should only exercise under medical advice?', 'Do you feel chest pain during activity, or have you had chest pain in the last month?', 'Do you lose balance because of dizziness, faint, or have you fainted in the last year?', 'Do you have a condition that could be made worse by changing your physical activity?', 'Do you take prescribed medication that could affect your ability to exercise safely?', 'Are you pregnant, recently postpartum, recovering from surgery, or managing an injury or illness?', 'Is there any other reason you believe you should get health guidance before exercising?'],
       fGoalQ: 'What do you want most?', fExpQ: 'How long have you trained seriously?',
       fFreqQ: 'Sessions per week', fDaysQ: 'Days you can train', fEquipQ: 'Equipment access',
       fNotes: 'Injuries, schedule, or anything else I should know?',
+      clientConsent: 'Client Training Consent', privacyNotice: 'Privacy Notice', consentPrefix: 'I have read and agree to the', privacyPrefix: 'I have read the',
       goalOptions: ['Lose fat', 'Build muscle', 'Recomposition', 'Get stronger'],
       daysOptions: ['2–3 days', '4–5 days', '6+ days'],
       equipOptions: ['Full gym', 'Home basics', 'Bodyweight only'],
@@ -844,11 +877,14 @@ class Component extends DCLogic {
         { q: '¿Reembolsos o pausas?', a: 'No hay reembolsos por meses parciales. Si necesitas una pausa de un mes o más, puedo poner tu plan en pausa.' },
       ],
       formStepLabel: 'Paso', formOf: 'de', back: 'Atrás', next: 'Siguiente',
-      step1Title: 'Tus datos', step2Title: 'Tu objetivo', step3Title: 'Tu entrenamiento', step4Title: 'Ya casi',
+      step1Title: 'Tus datos y salud', step2Title: 'Tu objetivo', step3Title: 'Tu entrenamiento', step4Title: 'Ya casi',
       fWa: 'WhatsApp / teléfono',
+      healthHeading: 'Chequeo de preparación física', healthNotice: 'Estas respuestas se envían con tu solicitud para revisar tus necesidades de entrenamiento. Esto no es consejo médico. Habla con un profesional de salud antes de ejercitarte si respondes Sí a alguna pregunta.', healthChoose: 'Elige una respuesta', healthNo: 'No', healthYes: 'Sí',
+      healthQuestions: ['¿Un médico te ha dicho que tienes una condición cardíaca o que solo debes ejercitarte bajo consejo médico?', '¿Sientes dolor en el pecho durante actividad o lo has tenido en el último mes?', '¿Pierdes el equilibrio por mareo, te desmayas o te has desmayado en el último año?', '¿Tienes una condición que podría empeorar al cambiar tu actividad física?', '¿Tomas medicamentos recetados que podrían afectar tu capacidad de ejercitarte con seguridad?', '¿Estás embarazada, recientemente en posparto, recuperándote de una cirugía o manejando una lesión o enfermedad?', '¿Hay otra razón por la que crees que debes recibir orientación de salud antes de ejercitarte?'],
       fGoalQ: '¿Qué es lo que más quieres?', fExpQ: '¿Cuánto llevas entrenando en serio?',
       fFreqQ: 'Sesiones por semana', fDaysQ: 'Días que puedes entrenar', fEquipQ: 'Acceso a equipo',
       fNotes: '¿Lesiones, horario o algo más que deba saber?',
+      clientConsent: 'Consentimiento de Entrenamiento', privacyNotice: 'Aviso de Privacidad', consentPrefix: 'He leído y acepto el', privacyPrefix: 'He leído el',
       goalOptions: ['Perder grasa', 'Ganar músculo', 'Recomposición', 'Más fuerza'],
       daysOptions: ['2–3 días', '4–5 días', '6+ días'],
       equipOptions: ['Gimnasio completo', 'Básico en casa', 'Solo peso corporal'],
@@ -897,7 +933,7 @@ class Component extends DCLogic {
     const SEL = 'padding:11px 16px; border-radius:22px; border:1px solid #ef5f28; background:#ef5f28; color:#fff; font-size:15px; cursor:pointer; font-family:inherit; box-shadow:0 8px 18px rgba(239,95,40,.22);';
     const chip = (field, opts) => opts.map(o => ({ label: o, onClick: () => this.setState(s => ({ form: { ...s.form, [field]: o } })), style: f[field] === o ? SEL : BASE }));
     const onField = (k) => (e) => { const v = e.target.value; this.setState(s => ({ form: { ...s.form, [k]: v } })); };
-    const canNext = step === 1 ? !!(f.name.trim() && f.email.trim() && f.wa.trim()) : step === 2 ? !!(f.goal && f.exp) : step === 3 ? !!f.freq : true;
+    const canNext = step === 1 ? !!(f.name.trim() && f.email.trim() && f.wa.trim() && f.health1 && f.health2 && f.health3 && f.health4 && f.health5 && f.health6 && f.health7) : step === 2 ? !!(f.goal && f.exp) : step === 3 ? !!f.freq : true;
     const stepTitles = [d.step1Title, d.step2Title, d.step3Title, d.step4Title];
     const nextBase = 'cursor:pointer; background:#ef5f28; color:#fff; border:none; font-weight:700; padding:15px 30px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit; box-shadow:0 10px 22px rgba(239,95,40,.24);';
     const nextDim = 'cursor:not-allowed; background:#f2ccb9; color:#fff; border:none; font-weight:700; padding:15px 30px; border-radius:26px; text-transform:uppercase; letter-spacing:.06em; font-size:15px; font-family:inherit;';
@@ -950,6 +986,7 @@ class Component extends DCLogic {
       stepLabelText: d.formStepLabel + ' ' + step + ' ' + d.formOf + ' 4',
       stepTitle: stepTitles[step - 1],
       onName: onField('name'), onEmail: onField('email'), onWa: onField('wa'), onNotes: onField('notes'),
+      healthQuestions: d.healthQuestions.map((label, index) => ({ label, value: f['health' + (index + 1)], onChange: onField('health' + (index + 1)) })),
       goalChips: chip('goal', d.goalOptions),
       expChips: chip('exp', d.expOptions),
       freqChips: chip('freq', d.tierFreqs),
@@ -966,7 +1003,7 @@ class Component extends DCLogic {
         const step = this.state.step;
         if (step < 4) {
           const f = this.state.form;
-          const canNext = step === 1 ? !!(f.name.trim() && f.email.trim() && f.wa.trim()) : step === 2 ? !!(f.goal && f.exp) : step === 3 ? !!f.freq : true;
+          const canNext = step === 1 ? !!(f.name.trim() && f.email.trim() && f.wa.trim() && f.health1 && f.health2 && f.health3 && f.health4 && f.health5 && f.health6 && f.health7) : step === 2 ? !!(f.goal && f.exp) : step === 3 ? !!f.freq : true;
           if (canNext) this.setState(s => ({ step: Math.min(4, s.step + 1) }));
           return;
         }
