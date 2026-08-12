@@ -208,6 +208,20 @@
     .navmark { font-size: 18px !important; }
     .navcta { gap: 12px !important; }
   }
+  .assessment-home { max-width:1180px; margin:0 auto 68px; padding:34px 40px; display:grid; grid-template-columns:1.25fr .75fr; gap:42px; align-items:center; background:#201a15; color:#fff; border-radius:20px; box-shadow:0 22px 50px rgba(73,48,30,.18); }
+  .assessment-kicker { margin:0 0 12px; color:#ff8a4c; font-size:12px; font-weight:700; letter-spacing:.18em; }
+  .assessment-home h2 { margin:0 0 12px; font-family:'Anton',sans-serif; font-size:clamp(34px,4vw,54px); font-weight:400; line-height:1; }
+  .assessment-home p:not(.assessment-kicker) { margin:0; max-width:650px; color:#e6ded3; font-size:18px; line-height:1.5; }
+  .assessment-action { display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+  .assessment-action span { color:#cfc3b5; font-size:12px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+  .assessment-button { display:flex; justify-content:space-between; gap:28px; width:100%; padding:17px 21px; border-radius:5px; background:#ef5f28; color:#fff; text-decoration:none; text-transform:uppercase; font-size:13px; font-weight:700; letter-spacing:.07em; }
+  .mobile-assessment { display:none; }
+  @media (max-width:760px) {
+    .assessment-home { margin:0 18px 42px; padding:30px 24px; grid-template-columns:1fr; gap:24px; border-radius:15px; }
+    .assessment-home h2 { font-size:38px; }
+    .assessment-action { width:100%; }
+    .mobile-assessment { position:fixed; z-index:30; left:16px; right:16px; bottom:14px; display:flex; align-items:center; justify-content:center; padding:14px 18px; border-radius:24px; background:#ef5f28; color:#fff; text-decoration:none; text-transform:uppercase; font-size:12px; font-weight:700; letter-spacing:.08em; box-shadow:0 12px 28px rgba(32,26,21,.28); }
+  }
 </style>
 </helmet>
 
@@ -236,7 +250,7 @@
       <span style="color:#201a15;">BARRERA</span>
     </div>
     <div class="navcta" style="display:flex; align-items:center; gap:26px; font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#726558;">
-      <a href="#method" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navMethod }}</a><a href="#coaching" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navCoaching }}</a><a href="#results" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navResults }}</a>
+      <a href="#method" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navMethod }}</a><a href="#coaching" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navCoaching }}</a><a href="#results" class="navlink" style="text-decoration:none; color:inherit;">{{ t.navResults }}</a><a href="assesment/" class="navlink" style="text-decoration:none; color:#ef5f28; font-weight:700;">Free Assessment</a>
       <button sc-camel-on-click="{{ toggleLang }}" style="cursor:pointer; background:transparent; color:#201a15; border:1px solid #d9cdb9; border-radius:20px; padding:7px 12px; font-family:'Barlow Semi Condensed',sans-serif; font-size:13px; letter-spacing:.1em;">{{ otherLangLabel }}</button>
       <a href="#apply" class="cta-btn" style="text-decoration:none; background:#ef5f28; color:#fff; font-weight:700; padding:11px 20px; border-radius:22px; text-transform:uppercase; letter-spacing:.06em; font-size:13px;">{{ t.apply }}</a>
     </div>
@@ -263,6 +277,19 @@
       </div>
     </div>
   </div>
+
+  <!-- assessment funnel promotion -->
+  <section class="assessment-home" aria-labelledby="assessment-title">
+    <div>
+      <p class="assessment-kicker">FREE · 90-SECOND ASSESSMENT</p>
+      <h2 id="assessment-title">NOT SURE WHAT’S HOLDING YOU BACK?</h2>
+      <p>Discover your training profile and get a personalized seven-day action plan built around the obstacle most likely to be slowing your progress.</p>
+    </div>
+    <div class="assessment-action">
+      <span>5 questions · Instant roadmap</span>
+      <a class="cta-btn assessment-button" href="assesment/">Find my training profile <b>→</b></a>
+    </div>
+  </section>
 
   <!-- stats band -->
   <div style="background:repeating-linear-gradient(115deg, rgba(255,255,255,.07) 0 2px, transparent 2px 24px), linear-gradient(105deg,#12448f 0%,#0037a1 55%,#00256e 100%);">
@@ -666,6 +693,7 @@
   </div>
 
 </div>
+  <a class="mobile-assessment" href="assesment/" aria-label="Take the free training assessment">Take the free assessment →</a>
 </x-dc>
 <script type="text/x-dc" data-dc-script="" data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;es&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/ajbzfit&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
