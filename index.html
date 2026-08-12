@@ -289,6 +289,92 @@
     .rbr-theme #bodyweight-training h2{font-size:clamp(52px,16vw,78px) !important}
     .rbr-theme .assessment-home{margin-inline:12px !important}
   }
+
+  /* Full-page extension of the performance visual system. */
+  .rbr-theme .rbr-section { color:#f6f8f9 !important; border-color:var(--rbr-line) !important; }
+  .rbr-theme .rbr-section h2 { color:#f7fafb !important; font-size:clamp(44px,5.5vw,72px) !important; line-height:.92 !important; letter-spacing:-.04em !important; }
+  .rbr-theme .rbr-section h3 { color:#f7fafb !important; }
+  .rbr-theme .rbr-section p { color:var(--rbr-muted) !important; }
+  .rbr-theme .rbr-section img { border-radius:0 !important; }
+  .rbr-theme .rbr-stats { background:linear-gradient(100deg,#071217,#142129 55%,#071217) !important; border-block:1px solid rgba(72,220,255,.3) !important; }
+  .rbr-theme .rbr-stats>div { padding-block:30px !important; }
+  .rbr-theme .rbr-stats>div>div>div:first-child { color:#fff !important; font-family:'Barlow Semi Condensed',Arial,sans-serif !important; font-style:italic; font-weight:700; }
+  .rbr-theme .rbr-stats>div>div>div:last-child { color:var(--rbr-cyan) !important; }
+
+  .rbr-theme .rbr-about { max-width:none !important; padding:100px max(44px,calc((100vw - 1180px)/2)) !important; background:var(--rbr-black) !important; border-bottom:1px solid var(--rbr-line); }
+  .rbr-theme .rbr-about>div:first-child { border:1px solid var(--rbr-line); box-shadow:22px 22px 0 rgba(72,220,255,.09) !important; }
+  .rbr-theme .rbr-about>div:first-child img { filter:saturate(.62) contrast(1.08); }
+  .rbr-theme .rbr-about>div:nth-child(2)>div:first-child { color:var(--rbr-cyan) !important; }
+  .rbr-theme .rbr-about h2 { max-width:680px; }
+
+  .rbr-theme .rbr-gallery { max-width:none !important; padding:70px max(44px,calc((100vw - 1180px)/2)) 100px !important; background:#090b0d !important; border-block:1px solid var(--rbr-line); }
+  .rbr-theme .rbr-gallery .gallery-row { gap:12px !important; }
+  .rbr-theme .rbr-gallery .gallery-row img { filter:grayscale(.82) contrast(1.12); border:1px solid var(--rbr-line); transition:filter .25s ease,transform .25s ease; }
+  .rbr-theme .rbr-gallery .gallery-row img:hover { filter:grayscale(0) contrast(1.05); transform:translateY(-5px); }
+  .rbr-theme .rbr-gallery button { background:var(--rbr-cyan) !important; color:#031014 !important; border:0 !important; border-radius:0 !important; }
+
+  .rbr-theme .rbr-method { background:var(--rbr-black) !important; border-top:1px solid var(--rbr-line) !important; }
+  .rbr-theme .rbr-method>div { padding-block:100px !important; }
+  .rbr-theme .rbr-method .col4 { gap:12px !important; }
+  .rbr-theme .rbr-method .qcard { min-height:240px; padding:28px !important; border:1px solid var(--rbr-line) !important; background:var(--rbr-panel) !important; }
+  .rbr-theme .rbr-method .qcard [style*="border-radius:50%"] { border-radius:0 !important; background:transparent !important; color:var(--rbr-cyan) !important; border:1px solid var(--rbr-cyan); font-size:22px !important; font-style:italic; }
+  .rbr-theme .rbr-method .methodline { background:var(--rbr-cyan) !important; opacity:.3 !important; }
+
+  .rbr-theme .rbr-why { background:linear-gradient(135deg,#142028,#07090b 68%) !important; border-block:1px solid var(--rbr-line) !important; }
+  .rbr-theme .rbr-why>div { max-width:1050px !important; padding-block:110px !important; }
+  .rbr-theme .rbr-why h2 { font-size:clamp(54px,7vw,96px) !important; }
+  .rbr-theme .rbr-why [style*="background:#ffcf00"] { background:var(--rbr-cyan) !important; width:90px !important; }
+
+  .rbr-theme .rbr-pillars { background:#090b0d !important; border-bottom:1px solid var(--rbr-line); }
+  .rbr-theme .rbr-pillars>div { padding-block:100px !important; }
+  .rbr-theme .rbr-pillars .col2 { grid-template-columns:repeat(3,1fr) !important; gap:12px !important; }
+  .rbr-theme .rbr-pillars .pcard { min-height:265px; padding:34px !important; border-top:3px solid var(--rbr-cyan) !important; }
+  .rbr-theme .rbr-pillars .pcard>div:first-child { color:var(--rbr-cyan) !important; font-style:italic; }
+
+  .rbr-theme .rbr-moto { height:560px !important; border-block:1px solid var(--rbr-line); }
+  .rbr-theme .rbr-moto>img { filter:grayscale(.42) contrast(1.12); }
+  .rbr-theme .rbr-moto>div:nth-of-type(1) { background:linear-gradient(90deg,rgba(2,3,4,.96),rgba(2,3,4,.72) 48%,rgba(2,3,4,.12)) !important; }
+  .rbr-theme .rbr-moto h2 { max-width:650px; font-size:clamp(54px,7vw,92px) !important; }
+
+  .rbr-theme .rbr-programs { max-width:none !important; padding:105px max(44px,calc((100vw - 1180px)/2)) !important; background:var(--rbr-black) !important; }
+  .rbr-theme .rbr-programs .col4 { gap:10px !important; }
+  .rbr-theme .rbr-programs .tcard { padding:32px 24px !important; border:1px solid var(--rbr-line) !important; background:var(--rbr-panel) !important; }
+  .rbr-theme .rbr-programs .tcard [style*="font-size:42px"] { color:var(--rbr-cyan) !important; font-style:italic; }
+  .rbr-theme .rbr-programs .tcard [style*="background:#ef5f28"] { background:var(--rbr-cyan) !important; color:#031014 !important; }
+
+  .rbr-theme .rbr-results { background:#090b0d !important; border-block:1px solid var(--rbr-line); }
+  .rbr-theme .rbr-results>div { padding-block:105px !important; }
+  .rbr-theme .rbr-results .col2>div { background:var(--rbr-panel) !important; border:1px solid var(--rbr-line) !important; border-radius:0 !important; box-shadow:none !important; }
+  .rbr-theme .rbr-results .col2 img { filter:saturate(.68) contrast(1.08); }
+  .rbr-theme .rbr-results [style*="background:#fff"] { background:var(--rbr-panel) !important; }
+  .rbr-theme .rbr-results [style*="background:#fdfbf7"] { background:#111518 !important; }
+  .rbr-theme .rbr-results [style*="color:#ef5f28"] { color:var(--rbr-cyan) !important; }
+
+  .rbr-theme .rbr-faq { background:var(--rbr-black) !important; border-top:1px solid var(--rbr-line) !important; }
+  .rbr-theme .rbr-faq>div { padding-block:105px !important; }
+  .rbr-theme .rbr-faq .faq-item { background:var(--rbr-panel) !important; border:1px solid var(--rbr-line) !important; border-radius:0 !important; padding:22px 24px !important; }
+  .rbr-theme .rbr-faq .faq-item:hover { border-color:var(--rbr-cyan) !important; }
+
+  .rbr-theme .rbr-apply { max-width:none !important; padding:105px max(44px,calc((100vw - 1180px)/2)) !important; background:linear-gradient(135deg,#111a20,#050607 58%) !important; border-top:1px solid var(--rbr-line); }
+  .rbr-theme .rbr-apply h2 { font-size:clamp(58px,7vw,94px) !important; }
+  .rbr-theme .rbr-apply form,.rbr-theme .rbr-apply [style*="background:#fff"] { background:var(--rbr-panel) !important; border:1px solid var(--rbr-line) !important; border-radius:0 !important; box-shadow:18px 18px 0 rgba(72,220,255,.08) !important; }
+  .rbr-theme .rbr-apply input,.rbr-theme .rbr-apply textarea,.rbr-theme .rbr-apply select { background:#080a0c !important; color:#f7fafb !important; border:1px solid #394249 !important; border-radius:0 !important; }
+  .rbr-theme .rbr-apply input:focus,.rbr-theme .rbr-apply textarea:focus,.rbr-theme .rbr-apply select:focus { outline:2px solid var(--rbr-cyan) !important; border-color:var(--rbr-cyan) !important; }
+  .rbr-theme .rbr-apply button { border-radius:0 !important; }
+  .rbr-theme .rbr-apply [style*="background:#ef5f28"] { background:var(--rbr-cyan) !important; color:#031014 !important; }
+
+  .rbr-theme .rbr-footer { background:#050607 !important; border-top:4px solid var(--rbr-cyan) !important; }
+  .rbr-theme .rbr-footer>div { padding-block:38px !important; color:#f7fafb !important; }
+  .rbr-theme .rbr-footer a,.rbr-theme .rbr-footer span { color:#f7fafb !important; }
+  .rbr-theme .rbr-footer a:hover { color:var(--rbr-cyan) !important; }
+
+  @media(max-width:800px){
+    .rbr-theme .rbr-section h2{font-size:clamp(40px,12vw,62px) !important}
+    .rbr-theme .rbr-about,.rbr-theme .rbr-gallery,.rbr-theme .rbr-programs,.rbr-theme .rbr-apply{padding:72px 20px !important}
+    .rbr-theme .rbr-method>div,.rbr-theme .rbr-pillars>div,.rbr-theme .rbr-results>div,.rbr-theme .rbr-faq>div{padding:72px 20px !important}
+    .rbr-theme .rbr-pillars .col2,.rbr-theme .rbr-programs .col4{grid-template-columns:1fr !important}
+    .rbr-theme .rbr-moto{height:480px !important}
+  }
 </style>
 </helmet>
 
@@ -383,7 +469,7 @@
   </section>
 
   <!-- stats band -->
-  <div style="background:repeating-linear-gradient(115deg, rgba(255,255,255,.07) 0 2px, transparent 2px 24px), linear-gradient(105deg,#12448f 0%,#0037a1 55%,#00256e 100%);">
+  <div class="rbr-section rbr-stats" style="background:repeating-linear-gradient(115deg, rgba(255,255,255,.07) 0 2px, transparent 2px 24px), linear-gradient(105deg,#12448f 0%,#0037a1 55%,#00256e 100%);">
     <div class="statrow" style="max-width:1180px; margin:0 auto; padding:34px 44px; display:flex; justify-content:space-around; color:#fff;">
       <div style="text-align:center;"><div style="font-family:'Anton',sans-serif; font-size:44px; line-height:1;">{{ t.stat1n }}</div><div style="font-size:14px; text-transform:uppercase; letter-spacing:.12em; color:#ffe6d3;">{{ t.stat1l }}</div></div>
       <div class="statdiv" style="width:3px; height:44px; background:rgba(255,255,255,.4); transform:skewX(-18deg); border-radius:2px;"></div>
@@ -394,7 +480,7 @@
   </div>
 
   <!-- about -->
-  <div class="col2" style="max-width:1180px; margin:0 auto; padding:78px 44px; display:grid; grid-template-columns:.85fr 1.15fr; gap:48px; align-items:center;">
+  <div class="rbr-section rbr-about col2" style="max-width:1180px; margin:0 auto; padding:78px 44px; display:grid; grid-template-columns:.85fr 1.15fr; gap:48px; align-items:center;">
     <div style="aspect-ratio:4/5; border-radius:16px; overflow:hidden; box-shadow:0 18px 40px rgba(120,70,30,.16);">
       <img src="assets/478290bc-9a7a-4c6f-9170-dee26e1b9941.webp" alt="Alexander Barrera training with clients" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
     </div>
@@ -416,7 +502,7 @@
   </div>
 
   <!-- photo gallery -->
-  <div style="max-width:1180px; margin:0 auto; padding:0 44px 64px; position:relative;">
+  <div class="rbr-section rbr-gallery" style="max-width:1180px; margin:0 auto; padding:0 44px 64px; position:relative;">
     <div aria-hidden="true" style="position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none;">
       <img data-gallery-preload="0" src="assets/eccd113a-4a84-427f-b646-dfd2f76b3957.webp" alt="">
       <img data-gallery-preload="1" src="assets/b7993583-e519-4293-b331-242a985e5e52.webp" alt="">
@@ -448,7 +534,7 @@
   </sc-if>
 
   <!-- how it works -->
-  <div id="method" style="background:#faf3e8; border-top:1px solid #f0e7d9;">
+  <div class="rbr-section rbr-method" id="method" style="background:#faf3e8; border-top:1px solid #f0e7d9;">
     <div style="max-width:1180px; margin:0 auto; padding:78px 44px;">
       
       <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 44px; color:#201a15;">{{ t.howTitle }}</h2>
@@ -469,7 +555,7 @@
   </div>
 
   <!-- why it works -->
-  <div style="background:linear-gradient(180deg,#fdfbf7 0%,#fff4ec 100%); border-top:1px solid #f0e7d9;">
+  <div class="rbr-section rbr-why" style="background:linear-gradient(180deg,#fdfbf7 0%,#fff4ec 100%); border-top:1px solid #f0e7d9;">
     <div style="max-width:900px; margin:0 auto; padding:86px 44px; text-align:center;">
       
       <div style="width:52px; height:5px; background:#ffcf00; border-radius:2px; margin:0 auto 28px; transform:skewX(-20deg);"></div>
@@ -480,7 +566,7 @@
   </div>
 
   <!-- pillars -->
-  <div style="background:#fff4ec;">
+  <div class="rbr-section rbr-pillars" style="background:#fff4ec;">
     <div style="max-width:1180px; margin:0 auto; padding:74px 44px;">
       <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:42px; margin:0 0 44px;">{{ t.pillarsTitle }}</h2>
       <div class="col2" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
@@ -496,7 +582,7 @@
   </div>
 
   <!-- moto brand band -->
-  <div style="position:relative; height:440px; overflow:hidden;">
+  <div class="rbr-section rbr-moto" style="position:relative; height:440px; overflow:hidden;">
     <img src="assets/7f3944cc-9f37-4268-8658-13520fb9c5b0.webp" alt="Alexander Barrera at the track" style="width:100%; height:100%; object-fit:cover; object-position:center 28%; display:block;">
     <div style="position:absolute; inset:0; background:linear-gradient(90deg, rgba(20,17,13,.86) 0%, rgba(20,17,13,.45) 44%, rgba(20,17,13,0) 68%);"></div>
     <div style="position:absolute; inset:0; display:flex; align-items:center;">
@@ -508,7 +594,7 @@
   </div>
 
   <!-- programs -->
-  <div id="coaching" style="max-width:1180px; margin:0 auto; padding:78px 44px;">
+  <div class="rbr-section rbr-programs" id="coaching" style="max-width:1180px; margin:0 auto; padding:78px 44px;">
     
     <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 8px;">{{ t.programsTitle }}</h2>
     <p style="font-size:19px; color:#726558; margin:0 0 38px; max-width:34em;">{{ t.programsSub }}</p>
@@ -531,7 +617,7 @@
   </div>
 
   <!-- results -->
-  <div id="results" style="background:#f6f1e8;">
+  <div class="rbr-section rbr-results" id="results" style="background:#f6f1e8;">
     <div style="max-width:1180px; margin:0 auto; padding:78px 44px;">
       
       <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 38px; text-align:center;">{{ t.resultsTitle }}</h2>
@@ -581,7 +667,7 @@
   </div>
 
   <!-- faq -->
-  <div style="background:#faf3e8; border-top:1px solid #f0e7d9;">
+  <div class="rbr-section rbr-faq" style="background:#faf3e8; border-top:1px solid #f0e7d9;">
     <div style="max-width:1180px; margin:0 auto; padding:78px 44px;">
       
       <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:46px; margin:0 0 12px; text-align:center;">{{ t.faqTitle }}</h2>
@@ -600,7 +686,7 @@
   </div>
 
   <!-- apply -->
-  <div id="apply" style="max-width:1180px; margin:0 auto; padding:82px 44px;">
+  <div class="rbr-section rbr-apply" id="apply" style="max-width:1180px; margin:0 auto; padding:82px 44px;">
     <div class="col2" style="display:grid; grid-template-columns:1fr 1fr; gap:52px; align-items:start;">
       <div>
         
@@ -760,7 +846,7 @@
   </div>
 
   <!-- footer -->
-  <div style="background:linear-gradient(105deg,#ff8a4c 0%,#ef5f28 58%,#e0491a 100%);">
+  <div class="rbr-section rbr-footer" style="background:linear-gradient(105deg,#ff8a4c 0%,#ef5f28 58%,#e0491a 100%);">
     <div style="max-width:1180px; margin:0 auto; padding:30px 44px; display:flex; justify-content:space-between; align-items:center; color:#fff;">
       <div style="display:flex; align-items:center; gap:8px; font-family:'Anton',sans-serif; font-size:20px; line-height:.8; letter-spacing:-.01em;">
         <img src="assets/15f820f8-810e-4522-9963-91e37d3da817.png" alt="" aria-hidden="true" style="height:38px; width:auto; mix-blend-mode:multiply; margin-right:4px;">
