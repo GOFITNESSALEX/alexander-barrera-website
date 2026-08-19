@@ -227,7 +227,6 @@
   /* Ross-inspired high-performance visual system; all content and assets remain GoFitnessAlex. */
   :root { --rbr-black:#050607; --rbr-panel:#0d1012; --rbr-panel2:#15191c; --rbr-cyan:#48dcff; --rbr-line:#2b3338; --rbr-muted:#aab4ba; }
   body.rbr-theme { background:var(--rbr-black) !important; color:#f7fafb !important; font-family:'Barlow Semi Condensed',Arial,sans-serif; }
-  #bodyweight-training { display:none !important; }
   .rbr-theme ::selection { background:var(--rbr-cyan); color:#031014; }
   .rbr-theme h1,.rbr-theme h2,.rbr-theme h3 { font-family:'Barlow Semi Condensed',Arial,sans-serif !important; font-style:italic; font-weight:700 !important; text-transform:uppercase; letter-spacing:-.035em; }
   .rbr-theme p { text-wrap:pretty; }
@@ -456,7 +455,6 @@
           <a href="#apply" class="cta-btn" style="text-decoration:none; background:#48dcff; color:#fff; font-weight:700; padding:17px 32px; border-radius:26px; text-transform:uppercase; letter-spacing:.07em; font-size:15px; box-shadow:0 12px 26px rgba(72,220,255,.28);">{{ t.applyCta }}</a>
           <a href="#results" style="text-decoration:none; color:#201a15; font-weight:600; padding:16px 6px; text-transform:uppercase; letter-spacing:.08em; font-size:14px; border-bottom:2px solid #e0d3bf;">{{ t.navResults }}</a>
         </div>
-        <p style="margin:20px 0 0; color:#68e5ff; font-size:12px; font-weight:700; letter-spacing:.12em;">{{ t.heroTrust }}</p>
       </div>
       <div style="position:relative;">
         <div style="position:absolute; inset:-18px; border-radius:24px; background:linear-gradient(140deg,#68e5ff,#48dcff); opacity:.16;"></div>
@@ -941,10 +939,9 @@ class Component extends DCLogic {
     const showPrices = this.props.showPrices !== false;
     const en = {
       navMethod: 'Method', navCoaching: 'Coaching', navResults: 'Results', apply: 'Get started', applyCta: 'Book a free intro call', popular: 'Most popular',
-      heroKicker: 'Live 1:1 online personal training',
-      heroTitle: 'BUILD STRENGTH. LOSE FAT. STAY CONSISTENT.',
-      heroSub: "Train live with me on Zoom from anywhere. I correct every rep, personalize your progression, and give you the accountability to keep showing up—without generic apps or guesswork.",
-      heroTrust: 'LIVE ON ZOOM · ENGLISH & SPANISH · WORLDWIDE',
+      heroKicker: '1:1 Coaching',
+      heroTitle: 'STRONG. AESTHETIC. TOGETHER.',
+      heroSub: "Most people are training alone, if they're training at all. I coach you 1:1, live on Zoom, every week, building the strong, lean body you actually want. Not an app. Not a script. A real training partner in your corner.",
       stat1n: '7+', stat1l: 'years coaching', stat2n: '8,000+', stat2l: 'hours 1:1', stat3n: 'CPT', stat3l: 'certified trainer',
       howKicker: 'How it works', howTitle: 'Simple. Live. Accountable.',
       whyKicker: 'Why it works', whyTitleL1: 'Show up. Stay consistent.', whyTitleL2: 'See results.',
@@ -1030,10 +1027,9 @@ class Component extends DCLogic {
     };
     const es = {
       navMethod: 'Método', navCoaching: 'Coaching', navResults: 'Resultados', apply: 'Empezar', applyCta: 'Agenda tu llamada gratis', popular: 'Más popular',
-      heroKicker: 'Entrenamiento personal online 1:1 en vivo',
-      heroTitle: 'GANA FUERZA. PIERDE GRASA. SÉ CONSTANTE.',
-      heroSub: 'Entrena conmigo en vivo por Zoom desde cualquier lugar. Corrijo cada repetición, personalizo tu progreso y te doy la responsabilidad necesaria para mantener la constancia, sin aplicaciones genéricas ni improvisación.',
-      heroTrust: 'EN VIVO POR ZOOM · ESPAÑOL E INGLÉS · TODO EL MUNDO',
+      heroKicker: 'Un compañero de entrenamiento a tu lado',
+      heroTitle: 'FUERTE. ESTÉTICO. JUNTOS.',
+      heroSub: 'La mayoría de las personas entrenan solas, si es que entrenan. Te entreno 1:1, en vivo por Zoom, cada semana, construyendo el cuerpo fuerte y definido que quieres. Nada de apps, nada de guiones: un compañero de entrenamiento real, en tu esquina.',
       stat1n: '7+', stat1l: 'años entrenando', stat2n: '8.000+', stat2l: 'horas 1:1', stat3n: 'CPT', stat3l: 'entrenador certificado',
       howKicker: 'Cómo funciona', howTitle: 'Simple. En vivo. Con seguimiento.',
       whyKicker: 'Por qué funciona', whyTitleL1: 'Preséntate. Sé constante.', whyTitleL2: 'Ve resultados.',
