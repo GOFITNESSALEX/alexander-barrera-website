@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Private client onboarding questionnaire for GO FITNESS ALEX coaching.">
+  <title>Client Onboarding | GO FITNESS ALEX</title>
+  <link rel="icon" href="assets/15f820f8-810e-4522-9963-91e37d3da817.png">
+  <style>
+    @font-face{font-family:Anton;src:url('assets/f0f3891f-bc5c-492e-8f3d-624b806a768d.woff2') format('woff2');font-display:swap}
+    @font-face{font-family:Barlow;src:url('assets/7eaea690-7bda-451f-a22d-ce25bd4f1105.woff2') format('woff2');font-weight:400;font-display:swap}
+    @font-face{font-family:Barlow;src:url('assets/096a7788-77c2-4624-8b40-299f1aacf649.woff2') format('woff2');font-weight:600;font-display:swap}
+    @font-face{font-family:Barlow;src:url('assets/3e7a053a-716e-42f9-845e-9493b02ea504.woff2') format('woff2');font-weight:700;font-display:swap}
+    :root{--ink:#201a15;--muted:#71665c;--paper:#fffdfa;--cream:#faf3e8;--line:#dfd2bf;--orange:#ef5f28;--orange-dark:#d94713;--blue:#0037a1;--soft-blue:#edf3ff;--success:#18794e;--danger:#a43328;--shadow:0 20px 60px rgba(64,45,28,.12)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(135deg,#fff 0,#faf3e8 52%,#f5ead8 100%);color:var(--ink);font:16px/1.5 Barlow,Arial,sans-serif;min-height:100vh}
+    a{color:var(--blue)}button,input,select,textarea{font:inherit}.shell{width:min(1160px,calc(100% - 32px));margin:0 auto;padding:28px 0 60px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}.mark{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;font:20px Anton,sans-serif;letter-spacing:.02em;box-shadow:inset 0 -4px 0 rgba(0,0,0,.15)}.brand-copy strong{display:block;font-size:15px;letter-spacing:.12em}.brand-copy span{display:block;color:var(--muted);font-size:12px}.home-link{font-weight:700;text-decoration:none}.home-link:hover{text-decoration:underline}
+    .layout{display:grid;grid-template-columns:minmax(250px,340px) minmax(0,1fr);gap:28px;align-items:start}.intro{position:sticky;top:24px;padding:32px;border-radius:24px;color:#fff;background:var(--blue);overflow:hidden;box-shadow:var(--shadow)}.intro:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-100px;bottom:-100px;background:var(--orange)}.eyebrow{margin:0 0 12px;color:#ffd32a;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.intro h1{position:relative;margin:0;font:clamp(42px,6vw,72px)/.96 Anton,sans-serif;text-transform:uppercase;letter-spacing:.01em}.intro p{position:relative;color:#e6edff;margin:18px 0 0}.time{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:9px 12px;border:1px solid rgba(255,255,255,.24);border-radius:999px;font-weight:600;font-size:13px}.flag{display:flex;position:relative;width:72px;height:5px;margin-top:32px;border-radius:6px;overflow:hidden}.flag i{flex:1}.flag i:nth-child(1){background:#ffd600}.flag i:nth-child(2){background:#063a9b}.flag i:nth-child(3){background:#cf142b}
+    .form-card{background:rgba(255,253,250,.94);border:1px solid rgba(223,210,191,.9);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.progress-wrap{padding:25px 30px 20px;border-bottom:1px solid var(--line);background:#fff}.progress-top{display:flex;justify-content:space-between;gap:16px;margin-bottom:10px;font-size:13px;font-weight:700}.progress-top span:last-child{color:var(--muted)}.track{height:8px;border-radius:99px;background:#eee6da;overflow:hidden}.bar{width:16.666%;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--orange),#ff9b52);transition:width .3s ease}
+    form{padding:30px}.step{display:none;animation:rise .28s ease}.step.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.step-heading{display:flex;align-items:flex-start;gap:15px;margin-bottom:25px}.step-number{flex:0 0 42px;display:grid;place-items:center;height:42px;border-radius:12px;background:var(--soft-blue);color:var(--blue);font-weight:700}.step h2{margin:0;font-size:30px;line-height:1.05}.step-heading p{margin:6px 0 0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}.full{grid-column:1/-1}.field label,.group-label{display:block;margin-bottom:7px;font-size:14px;font-weight:700}.required:after{content:" *";color:var(--orange)}.hint{display:block;color:var(--muted);font-size:12px;font-weight:400;margin-top:3px}.control{width:100%;min-height:48px;border:1px solid #cfc1ae;border-radius:11px;background:#fff;padding:11px 13px;color:var(--ink);outline:none;transition:.15s}.control:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,55,161,.12)}textarea.control{min-height:105px;resize:vertical}.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choice{display:flex;align-items:flex-start;gap:9px;padding:11px 12px;border:1px solid #d7cbbb;border-radius:11px;background:#fff;cursor:pointer}.choice:has(input:checked){border-color:var(--blue);background:var(--soft-blue)}.choice input{margin-top:3px;accent-color:var(--blue)}.choice span{font-size:14px}.readiness{display:grid;gap:11px}.question{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:15px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}.question p{margin:0;font-size:14px;font-weight:600}.yesno{display:flex;gap:6px}.yesno label{cursor:pointer}.yesno input{position:absolute;opacity:0}.yesno span{display:block;min-width:48px;padding:7px 9px;text-align:center;border:1px solid #cfc1ae;border-radius:8px;font-size:13px;font-weight:700}.yesno input:checked+span{color:#fff;background:var(--blue);border-color:var(--blue)}
+    .notice{padding:14px 16px;border-left:4px solid var(--blue);border-radius:8px;background:var(--soft-blue);font-size:14px}.notice strong{display:block;margin-bottom:3px}.medical-alert{display:none;margin-top:14px;border-left-color:var(--danger);background:#fff0ed;color:#74241c}.medical-alert.show{display:block}.consents{display:grid;gap:12px}.consent{display:flex;gap:11px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}.consent input{flex:0 0 auto;margin-top:4px;accent-color:var(--orange)}.consent span{font-size:14px}.actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.btn{min-height:48px;border:0;border-radius:999px;padding:11px 21px;font-weight:700;cursor:pointer}.btn-secondary{background:#eee6da;color:var(--ink)}.btn-primary{margin-left:auto;background:var(--orange);color:#fff;box-shadow:0 8px 18px rgba(239,95,40,.22)}.btn-primary:hover{background:var(--orange-dark)}.btn:focus-visible{outline:3px solid rgba(0,55,161,.24);outline-offset:2px}.error-summary{display:none;margin-bottom:20px;padding:13px 15px;border-radius:9px;background:#fff0ed;color:#7c2a22;font-weight:600}.error-summary.show{display:block}.submit-state{display:none;padding:55px 30px;text-align:center}.submit-state.show{display:block}.success-icon{display:grid;place-items:center;width:72px;height:72px;margin:0 auto 18px;border-radius:50%;background:#e8f7ef;color:var(--success);font-size:34px;font-weight:700}.submit-state h2{margin:0 0 10px;font-size:34px}.submit-state p{max-width:540px;margin:0 auto 22px;color:var(--muted)}.privacy-line{margin:18px 0 0;color:var(--muted);font-size:12px;text-align:center}
+    @media(max-width:820px){.layout{grid-template-columns:1fr}.intro{position:relative;top:auto}.intro h1{font-size:52px}.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+    @media(max-width:540px){.shell{width:min(100% - 20px,1160px);padding-top:16px}.topbar{align-items:flex-start}.brand-copy span{display:none}.home-link{font-size:13px}.intro{padding:25px;border-radius:18px}.intro h1{font-size:45px}.form-card{border-radius:18px}.progress-wrap,form{padding:21px 18px}.step h2{font-size:25px}.choice-grid{grid-template-columns:1fr}.question{grid-template-columns:1fr}.actions{flex-wrap:wrap}.btn{flex:1}.btn-primary{min-width:150px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}.step{animation:none}.bar{transition:none}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><span class="mark">GA</span><span class="brand-copy"><strong>GO FITNESS ALEX</strong><span>Online coaching • Built around you</span></span></a>
+      <a class="home-link" href="index.html">← Back to website</a>
+    </header>
+
+    <main class="layout">
+      <aside class="intro">
+        <p class="eyebrow">Welcome to the team</p>
+        <h1>Let's build your game plan.</h1>
+        <p>Your answers help Alexander understand your goals, schedule, training history, nutrition, and the support you need.</p>
+        <div class="time">◷ About 10–12 minutes</div>
+        <div class="flag" aria-hidden="true"><i></i><i></i><i></i></div>
+      </aside>
+
+      <section class="form-card" aria-labelledby="form-title">
+        <div class="progress-wrap">
+          <div class="progress-top"><span id="stepLabel">Step 1 of 6 · About you</span><span id="progressPercent">17% complete</span></div>
+          <div class="track" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1"><div class="bar"></div></div>
+        </div>
+
+        <form id="onboardingForm" action="https://formspree.io/f/xvkojwbk" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New GO FITNESS ALEX client onboarding">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <div id="errorSummary" class="error-summary" role="alert">Please complete the required fields before continuing.</div>
+
+          <section class="step active" data-title="About you">
+            <div class="step-heading"><span class="step-number">01</span><div><h2 id="form-title">First, tell me about you</h2><p>The essentials Alexander will use to contact and coach you.</p></div></div>
+            <div class="grid">
+              <div class="field"><label class="required" for="fullName">Full legal name</label><input class="control" id="fullName" name="full_name" autocomplete="name" required></div>
+              <div class="field"><label for="preferredName">Preferred name</label><input class="control" id="preferredName" name="preferred_name" autocomplete="nickname"></div>
+              <div class="field"><label class="required" for="email">Email</label><input class="control" id="email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label class="required" for="phone">WhatsApp / phone</label><input class="control" id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+              <div class="field"><label class="required" for="dob">Date of birth <span class="hint">Clients must be 18 or older</span></label><input class="control" id="dob" name="date_of_birth" type="date" required></div>
+              <div class="field"><label class="required" for="timezone">City &amp; time zone</label><input class="control" id="timezone" name="city_timezone" placeholder="Miami · Eastern Time" required></div>
+              <div class="field"><label class="required" for="emergencyName">Emergency contact name</label><input class="control" id="emergencyName" name="emergency_contact_name" required></div>
+              <div class="field"><label class="required" for="emergencyPhone">Emergency contact phone</label><input class="control" id="emergencyPhone" name="emergency_contact_phone" type="tel" required></div>
+            </div>
+          </section>
+
+          <section class="step" data-title="Your goals">
+            <div class="step-heading"><span class="step-number">02</span><div><h2>Where are we headed?</h2><p>Clear goals help us measure progress beyond the scale.</p></div></div>
+            <div class="grid">
+              <div class="field full"><span class="group-label required">Primary goal</span><div class="choice-grid">
+                <label class="choice"><input type="radio" name="primary_goal" value="Fat loss" required><span>Fat loss</span></label><label class="choice"><input type="radio" name="primary_goal" value="Build muscle"><span>Build muscle</span></label><label class="choice"><input type="radio" name="primary_goal" value="Strength and performance"><span>Strength &amp; performance</span></label><label class="choice"><input type="radio" name="primary_goal" value="Energy and health"><span>Energy &amp; health</span></label><label class="choice"><input type="radio" name="primary_goal" value="Mobility"><span>Mobility</span></label><label class="choice"><input type="radio" name="primary_goal" value="Consistency"><span>Consistency</span></label>
+              </div></div>
+              <div class="field full"><label class="required" for="outcome">What would a successful next 90 days look and feel like?</label><textarea class="control" id="outcome" name="ninety_day_outcome" required></textarea></div>
+              <div class="field"><label class="required" for="height">Height</label><input class="control" id="height" name="height" placeholder="5'10&quot; or 178 cm" required></div>
+              <div class="field"><label class="required" for="weight">Current weight</label><input class="control" id="weight" name="current_weight" placeholder="197 lb or 89 kg" required></div>
+              <div class="field"><label for="target">Goal weight or range <span class="hint">Optional</span></label><input class="control" id="target" name="goal_weight_range"></div>
+              <div class="field"><label for="deadline">Meaningful date or deadline <span class="hint">Optional</span></label><input class="control" id="deadline" name="goal_deadline" type="date"></div>
+              <div class="field full"><label class="required" for="barriers">What has made this difficult in the past?</label><textarea class="control" id="barriers" name="past_attempts_and_barriers" required></textarea></div>
+            </div>
+          </section>
+
+          <section class="step" data-title="Training">
+            <div class="step-heading"><span class="step-number">03</span><div><h2>Your training reality</h2><p>We will build the program around the time and equipment you actually have.</p></div></div>
+            <div class="grid">
+              <div class="field"><label class="required" for="experience">Training experience</label><select class="control" id="experience" name="training_experience" required><option value="">Choose one</option><option>New to structured training</option><option>Less than 1 year</option><option>1–3 years</option><option>3+ years</option><option>Returning after a long break</option></select></div>
+              <div class="field"><label class="required" for="currentTraining">Current training frequency</label><select class="control" id="currentTraining" name="current_training_frequency" required><option value="">Choose one</option><option>Not currently training</option><option>1–2 days per week</option><option>3–4 days per week</option><option>5+ days per week</option></select></div>
+              <div class="field"><label class="required" for="availableDays">Realistically available days/week</label><select class="control" id="availableDays" name="available_training_days" required><option value="">Choose one</option><option>2 days</option><option>3 days</option><option>4 days</option><option>5 days</option><option>6 days</option></select></div>
+              <div class="field"><label class="required" for="sessionLength">Time available per session</label><select class="control" id="sessionLength" name="session_length" required><option value="">Choose one</option><option>20–30 minutes</option><option>30–45 minutes</option><option>45–60 minutes</option><option>60+ minutes</option></select></div>
+              <div class="field full"><span class="group-label required">Where will you train?</span><div class="choice-grid"><label class="choice"><input type="radio" name="training_location" value="Commercial gym" required><span>Commercial gym</span></label><label class="choice"><input type="radio" name="training_location" value="Home gym"><span>Home gym</span></label><label class="choice"><input type="radio" name="training_location" value="Minimal equipment"><span>Minimal equipment</span></label><label class="choice"><input type="radio" name="training_location" value="Outdoors or mixed"><span>Outdoors / mixed</span></label></div></div>
+              <div class="field full"><label class="required" for="equipment">Equipment available</label><textarea class="control" id="equipment" name="equipment_available" placeholder="Machines, dumbbells, bands, bench, cardio equipment..." required></textarea></div>
+              <div class="field"><label for="enjoy">Exercises or activities you enjoy</label><textarea class="control" id="enjoy" name="activities_enjoyed"></textarea></div>
+              <div class="field"><label for="avoid">Exercises you dislike or avoid</label><textarea class="control" id="avoid" name="activities_avoided"></textarea></div>
+            </div>
+          </section>
+
+          <section class="step" data-title="Health & safety">
+            <div class="step-heading"><span class="step-number">04</span><div><h2>Health &amp; readiness</h2><p>Please answer honestly so Alexander can coach you responsibly.</p></div></div>
+            <div class="notice"><strong>This is a safety screen, not a diagnosis.</strong>Coaching does not replace medical care. Do not upload or include detailed medical records here.</div>
+            <div class="readiness" style="margin-top:18px">
+              <div class="question"><p>Has a clinician said you have a heart condition or should only exercise under medical supervision?</p><div class="yesno"><label><input type="radio" name="readiness_heart" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_heart" value="No"><span>No</span></label></div></div>
+              <div class="question"><p>Do you feel chest pain during activity or at rest?</p><div class="yesno"><label><input type="radio" name="readiness_chest_pain" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_chest_pain" value="No"><span>No</span></label></div></div>
+              <div class="question"><p>Have you recently experienced dizziness, fainting, or unexplained loss of balance?</p><div class="yesno"><label><input type="radio" name="readiness_dizziness" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_dizziness" value="No"><span>No</span></label></div></div>
+              <div class="question"><p>Do you have a bone, joint, or other condition that physical activity could worsen?</p><div class="yesno"><label><input type="radio" name="readiness_joint_condition" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_joint_condition" value="No"><span>No</span></label></div></div>
+              <div class="question"><p>Do you take medication that may affect heart rate, blood pressure, balance, or exercise?</p><div class="yesno"><label><input type="radio" name="readiness_medication" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_medication" value="No"><span>No</span></label></div></div>
+              <div class="question"><p>Are you pregnant/postpartum, recovering from surgery, injured, or currently ill?</p><div class="yesno"><label><input type="radio" name="readiness_recovery" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_recovery" value="No"><span>No</span></label></div></div>
+              <div class="question"><p>Is there any other reason you may need medical guidance before increasing activity?</p><div class="yesno"><label><input type="radio" name="readiness_other" value="Yes" required><span>Yes</span></label><label><input type="radio" name="readiness_other" value="No"><span>No</span></label></div></div>
+            </div>
+            <div id="medicalAlert" class="notice medical-alert"><strong>Please check with a qualified health professional.</strong>A “Yes” answer does not automatically exclude you from coaching, but Alexander may request appropriate medical clearance before training begins. Seek urgent care for emergency symptoms.</div>
+            <div class="grid" style="margin-top:20px">
+              <div class="field full"><span class="group-label required">Known conditions <span class="hint">Select all that apply</span></span><div class="choice-grid"><label class="choice"><input type="checkbox" name="known_conditions" value="None"><span>None known</span></label><label class="choice"><input type="checkbox" name="known_conditions" value="High blood pressure"><span>High blood pressure</span></label><label class="choice"><input type="checkbox" name="known_conditions" value="Diabetes"><span>Diabetes</span></label><label class="choice"><input type="checkbox" name="known_conditions" value="Heart condition"><span>Heart condition</span></label><label class="choice"><input type="checkbox" name="known_conditions" value="Asthma"><span>Asthma</span></label><label class="choice"><input type="checkbox" name="known_conditions" value="Arthritis"><span>Arthritis</span></label><label class="choice"><input type="checkbox" name="known_conditions" value="Other"><span>Other</span></label></div></div>
+              <div class="field full"><label for="healthDetails">Conditions, medications, injuries, pain, surgeries, or limitations Alexander should know about</label><textarea class="control" id="healthDetails" name="health_context" placeholder="Share only what is relevant to safe coaching. Do not include medical records."></textarea></div>
+              <div class="field full"><label class="required" for="clearance">Medical clearance status</label><select class="control" id="clearance" name="medical_clearance_status" required><option value="">Choose one</option><option>No clearance appears necessary</option><option>I have been cleared to exercise</option><option>I will seek clearance before starting</option><option>I am unsure and would like to discuss it</option></select></div>
+            </div>
+          </section>
+
+          <section class="step" data-title="Nutrition & lifestyle">
+            <div class="step-heading"><span class="step-number">05</span><div><h2>Your life outside the gym</h2><p>Nutrition, sleep, stress, and daily movement shape the plan too.</p></div></div>
+            <div class="grid">
+              <div class="field"><label class="required" for="pattern">Current eating pattern</label><select class="control" id="pattern" name="eating_pattern" required><option value="">Choose one</option><option>No specific pattern</option><option>High protein</option><option>Vegetarian</option><option>Vegan</option><option>Low carbohydrate</option><option>Intermittent fasting</option><option>Other</option></select></div>
+              <div class="field"><label class="required" for="meals">Typical meals per day</label><select class="control" id="meals" name="meals_per_day" required><option value="">Choose one</option><option>1–2</option><option>3</option><option>4</option><option>5+</option><option>Varies a lot</option></select></div>
+              <div class="field full"><label class="required" for="allergies">Food allergies, intolerances, or dietary restrictions</label><textarea class="control" id="allergies" name="allergies_and_restrictions" placeholder="Write “None” if none" required></textarea></div>
+              <div class="field"><label for="likes">Favorite foods / proteins / vegetables</label><textarea class="control" id="likes" name="foods_liked"></textarea></div>
+              <div class="field"><label for="dislikes">Foods you dislike or will not eat</label><textarea class="control" id="dislikes" name="foods_disliked"></textarea></div>
+              <div class="field"><label class="required" for="cook">Cooking and meal-prep reality</label><select class="control" id="cook" name="cooking_frequency" required><option value="">Choose one</option><option>I cook most meals</option><option>I cook a few times a week</option><option>I rely on quick or prepared food</option><option>I mostly eat out</option></select></div>
+              <div class="field"><label class="required" for="water">Daily water intake</label><input class="control" id="water" name="daily_water" placeholder="Example: 6 cups / 1.5 L" required></div>
+              <div class="field"><label class="required" for="sleep">Average sleep per night</label><select class="control" id="sleep" name="sleep_hours" required><option value="">Choose one</option><option>Under 5 hours</option><option>5–6 hours</option><option>6–7 hours</option><option>7–8 hours</option><option>8+ hours</option></select></div>
+              <div class="field"><label class="required" for="stress">Current stress level</label><select class="control" id="stress" name="stress_level" required><option value="">Choose one</option><option>Low</option><option>Moderate</option><option>High</option><option>Very high</option></select></div>
+              <div class="field"><label for="alcohol">Alcohol frequency</label><select class="control" id="alcohol" name="alcohol_frequency"><option value="">Prefer not to say</option><option>None</option><option>Occasionally</option><option>1–3 times per week</option><option>4+ times per week</option></select></div>
+              <div class="field"><label class="required" for="activity">Workday activity level</label><select class="control" id="activity" name="workday_activity" required><option value="">Choose one</option><option>Mostly seated</option><option>Mix of sitting and walking</option><option>Mostly on my feet</option><option>Physically demanding work</option></select></div>
+            </div>
+          </section>
+
+          <section class="step" data-title="Coaching fit">
+            <div class="step-heading"><span class="step-number">06</span><div><h2>How can Alexander coach you best?</h2><p>Last step — set expectations and confirm your information.</p></div></div>
+            <div class="grid">
+              <div class="field"><label class="required" for="contactMethod">Preferred contact method</label><select class="control" id="contactMethod" name="preferred_contact_method" required><option value="">Choose one</option><option>WhatsApp</option><option>Email</option><option>Video call</option></select></div>
+              <div class="field"><label class="required" for="checkin">Preferred check-in day/time</label><input class="control" id="checkin" name="preferred_checkin_time" placeholder="Fridays after 5 PM" required></div>
+              <div class="field full"><label class="required" for="coachingStyle">What kind of accountability and feedback works best for you?</label><textarea class="control" id="coachingStyle" name="preferred_coaching_style" required></textarea></div>
+              <div class="field full"><label for="anythingElse">Anything else you want Alexander to know?</label><textarea class="control" id="anythingElse" name="anything_else"></textarea></div>
+              <div class="field full"><div class="consents">
+                <label class="consent"><input type="checkbox" name="adult_confirmation" value="accepted" required><span>I confirm that I am at least 18 years old and that the answers in this questionnaire are accurate to the best of my knowledge.</span></label>
+                <label class="consent"><input type="checkbox" name="medical_acknowledgment" value="accepted" required><span>I understand that fitness and nutrition coaching are not medical care and do not replace advice, diagnosis, or treatment from a qualified health professional.</span></label>
+                <label class="consent"><input type="checkbox" name="change_notification" value="accepted" required><span>I will tell Alexander about relevant changes in my health, symptoms, medication, pregnancy status, injury, or ability to exercise safely.</span></label>
+                <label class="consent"><input type="checkbox" name="training_consent" value="accepted" required><span>I have read and accept the <a href="client-consent.html" target="_blank" rel="noopener">Client Training Consent</a>.</span></label>
+                <label class="consent"><input type="checkbox" name="privacy_notice" value="accepted" required><span>I consent to submitting these answers to GO FITNESS ALEX through Formspree and have read the <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a>.</span></label>
+              </div></div>
+              <div class="field"><label class="required" for="signature">Typed signature (full name)</label><input class="control" id="signature" name="typed_signature" autocomplete="name" required></div>
+              <div class="field"><label class="required" for="signatureDate">Date</label><input class="control" id="signatureDate" name="signature_date" type="date" required></div>
+            </div>
+          </section>
+
+          <div class="actions"><button class="btn btn-secondary" id="backBtn" type="button" hidden>Back</button><button class="btn btn-primary" id="nextBtn" type="button">Continue →</button><button class="btn btn-primary" id="submitBtn" type="submit" hidden>Send my questionnaire</button></div>
+          <p class="privacy-line">Your answers are used only to assess and deliver coaching. Please do not submit detailed medical records.</p>
+        </form>
+
+        <div id="successState" class="submit-state" role="status">
+          <div class="success-icon">✓</div><h2>You're all set.</h2><p>Your onboarding questionnaire was sent to Alexander. He will review your answers and contact you with the next step.</p><a class="btn btn-primary" href="index.html" style="display:inline-flex;align-items:center;text-decoration:none">Return to GO FITNESS ALEX</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.getElementById('onboardingForm');
+      const steps = [...form.querySelectorAll('.step')];
+      const back = document.getElementById('backBtn');
+      const next = document.getElementById('nextBtn');
+      const submit = document.getElementById('submitBtn');
+      const error = document.getElementById('errorSummary');
+      const track = document.querySelector('.track');
+      const bar = document.querySelector('.bar');
+      const stepLabel = document.getElementById('stepLabel');
+      const progressPercent = document.getElementById('progressPercent');
+      const medicalAlert = document.getElementById('medicalAlert');
+      const signatureDate = document.getElementById('signatureDate');
+      let current = 0;
+
+      signatureDate.value = new Date().toISOString().slice(0, 10);
+      document.getElementById('dob').max = new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().slice(0, 10);
+
+      function update() {
+        steps.forEach((step, index) => step.classList.toggle('active', index === current));
+        const percent = Math.round(((current + 1) / steps.length) * 100);
+        stepLabel.textContent = `Step ${current + 1} of ${steps.length} · ${steps[current].dataset.title}`;
+        progressPercent.textContent = `${percent}% complete`;
+        bar.style.width = `${percent}%`;
+        track.setAttribute('aria-valuenow', current + 1);
+        back.hidden = current === 0;
+        next.hidden = current === steps.length - 1;
+        submit.hidden = current !== steps.length - 1;
+        error.classList.remove('show');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function validStep() {
+        const fields = [...steps[current].querySelectorAll('input, select, textarea')];
+        let valid = true;
+        fields.forEach(field => {
+          if (!field.checkValidity()) {
+            valid = false;
+            field.setAttribute('aria-invalid', 'true');
+          } else field.removeAttribute('aria-invalid');
+        });
+        if (current === 3 && !steps[current].querySelector('input[name="known_conditions"]:checked')) valid = false;
+        error.textContent = valid ? '' : 'Please complete every required question before continuing.';
+        error.classList.toggle('show', !valid);
+        if (!valid) {
+          const first = fields.find(field => !field.checkValidity()) || steps[current].querySelector('input[name="known_conditions"]');
+          first?.focus();
+        }
+        return valid;
+      }
+
+      next.addEventListener('click', () => { if (validStep()) { current++; update(); } });
+      back.addEventListener('click', () => { current--; update(); });
+      form.addEventListener('change', event => {
+        if (event.target.name?.startsWith('readiness_')) {
+          const anyYes = form.querySelector('input[name^="readiness_"][value="Yes"]:checked');
+          medicalAlert.classList.toggle('show', Boolean(anyYes));
+        }
+        if (event.target.name === 'known_conditions' && event.target.value === 'None' && event.target.checked) {
+          form.querySelectorAll('input[name="known_conditions"]').forEach(box => { if (box !== event.target) box.checked = false; });
+        } else if (event.target.name === 'known_conditions' && event.target.value !== 'None' && event.target.checked) {
+          const none = form.querySelector('input[name="known_conditions"][value="None"]');
+          if (none) none.checked = false;
+        }
+      });
+
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!validStep()) return;
+        submit.disabled = true;
+        submit.textContent = 'Sending…';
+        error.classList.remove('show');
+        try {
+          const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          if (!response.ok) throw new Error('Submission failed');
+          form.style.display = 'none';
+          document.querySelector('.progress-wrap').style.display = 'none';
+          document.getElementById('successState').classList.add('show');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } catch (_) {
+          error.textContent = 'We could not send your questionnaire. Please check your connection and try again.';
+          error.classList.add('show');
+          submit.disabled = false;
+          submit.textContent = 'Send my questionnaire';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
