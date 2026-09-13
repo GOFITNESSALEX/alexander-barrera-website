@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Client Training Consent | GO FITNESS ALEX</title>
   <style>
-    :root { --ink:#201a15; --muted:#6f6255; --paper:#fdfbf7; --cream:#faf3e8; --line:#e2d6c4; --orange:#ef5f28; --blue:#0037a1; }
-    * { box-sizing:border-box; } body { margin:0; background:var(--cream); color:var(--ink); font:16px/1.65 Arial,sans-serif; } main { width:min(820px,calc(100% - 32px)); margin:48px auto; } .brand { color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; } h1 { margin:10px 0 8px; font-size:clamp(36px,7vw,58px); line-height:1; letter-spacing:-.04em; } h2 { margin:32px 0 8px; font-size:23px; } .card { margin-top:24px; padding:28px; border:1px solid var(--line); border-radius:16px; background:var(--paper); } .note { color:var(--muted); } .link { display:inline-block; margin-top:28px; padding:13px 18px; border-radius:999px; background:var(--orange); color:#fff; font-weight:700; text-decoration:none; }
+    :root { --ink:#201a15; --muted:#6f6255; --paper:#fdfbf7; --cream:#faf3e8; --line:#e2d6c4; --orange:#ef5f28; --blue:#0037a1; --green:#18794e; }
+    * { box-sizing:border-box; } body { margin:0; background:var(--cream); color:var(--ink); font:16px/1.65 Arial,sans-serif; } main { width:min(820px,calc(100% - 32px)); margin:48px auto; } .top{display:flex;justify-content:space-between;align-items:center;gap:18px}.brand { color:var(--blue); font-size:13px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }.step{color:var(--muted);font-size:13px;font-weight:700} h1 { margin:10px 0 8px; font-size:clamp(36px,7vw,58px); line-height:1; letter-spacing:-.04em; } h2 { margin:32px 0 8px; font-size:23px; } .card { margin-top:24px; padding:28px; border:1px solid var(--line); border-radius:16px; background:var(--paper); } .note { color:var(--muted); } .link,.submit { display:inline-block; margin-top:28px; padding:13px 18px; border:0;border-radius:999px; background:var(--orange); color:#fff; font-weight:700; text-decoration:none;cursor:pointer }.sign{border-top:1px solid var(--line);margin-top:30px;padding-top:26px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}.field input{width:100%;min-height:48px;padding:10px 12px;border:1px solid #cdbda8;border-radius:10px;background:#fff;font:inherit}.field input:focus{outline:3px solid rgba(0,55,161,.12);border-color:var(--blue)}.full{grid-column:1/-1}.check{display:flex;gap:10px;padding:14px;border:1px solid var(--line);border-radius:10px}.check input{margin-top:5px;accent-color:var(--orange)}.status{display:none;margin-top:18px;padding:14px;border-radius:10px}.status.error{display:block;background:#fff0ed;color:#7c2a22}.success{display:none;text-align:center;padding:44px 20px}.success.show{display:block}.success-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 16px;border-radius:50%;background:#e8f7ef;color:var(--green);font-size:32px;font-weight:800}@media(max-width:620px){main{margin:26px auto}.card{padding:20px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.top{align-items:flex-start}}
   </style>
 </head>
 <body>
   <main>
-    <div class="brand">GO FITNESS ALEX</div>
+    <div class="top"><div class="brand">GO FITNESS ALEX</div><div class="step">NEW CLIENT · STEP 2 OF 2</div></div>
     <h1>Client Training Consent</h1>
     <p class="note">Last updated: July 28, 2026. This general consent is intended for adult online-coaching clients worldwide. It is not legal or medical advice.</p>
     <article class="card">
@@ -29,9 +29,28 @@
       <h2>6. Results and services</h2>
       <p>Results vary based on consistency, lifestyle, medical factors, effort, and individual circumstances. GO FITNESS ALEX does not guarantee particular weight-loss, body-composition, performance, or health outcomes.</p>
       <h2>7. Acceptance</h2>
-      <p>By selecting the acceptance checkbox on the coaching application, submitting the application, purchasing a program, or continuing with coaching, I confirm that I have read and accept this Client Training Consent.</p>
+      <p>By signing below, selecting the acceptance checkbox, purchasing a program, or continuing with coaching, I confirm that I have read and accept this Client Training Consent.</p>
+      <div class="sign">
+        <h2 style="margin-top:0">Sign your consent</h2>
+        <p class="note">Your typed name and submission date create a record of your acceptance for Alexander.</p>
+        <form id="consentForm" action="https://formspree.io/f/xvkojwbk" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Signed GO FITNESS ALEX client consent"><input type="hidden" name="form_type" value="Client Training Consent"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+          <div class="grid">
+            <div class="field"><label for="consentName">Full legal name *</label><input id="consentName" name="full_name" autocomplete="name" required></div>
+            <div class="field"><label for="consentEmail">Email *</label><input id="consentEmail" name="email" type="email" autocomplete="email" required></div>
+            <div class="field full"><label for="consentDate">Date *</label><input id="consentDate" name="consent_date" type="date" required></div>
+            <label class="check full"><input type="checkbox" name="consent_accepted" value="accepted" required><span>I have read, understand, and voluntarily accept the Client Training Consent above. *</span></label>
+            <label class="check full"><input type="checkbox" name="privacy_acknowledgment" value="accepted" required><span>I understand that this signed record will be sent to GO FITNESS ALEX through Formspree, as described in the <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a>. *</span></label>
+          </div>
+          <div id="consentStatus" class="status" role="alert"></div><button class="submit" id="consentSubmit" type="submit">Sign and complete onboarding</button>
+        </form>
+        <div id="consentSuccess" class="success" role="status"><div class="success-icon">✓</div><h2>Onboarding complete.</h2><p>Thank you. Your questionnaire and signed consent are now ready for Alexander's review.</p><a class="link" href="index.html">Return to GO FITNESS ALEX</a></div>
+      </div>
     </article>
-    <a class="link" href="index.html#apply">Back to coaching application</a>
+    <a class="link" href="new-client.html">← Back to new-client welcome</a>
   </main>
+  <script>
+    (() => { const form=document.getElementById('consentForm'),date=document.getElementById('consentDate'),button=document.getElementById('consentSubmit'),status=document.getElementById('consentStatus'); date.value=new Date().toISOString().slice(0,10); form.addEventListener('submit',async event=>{ event.preventDefault(); if(!form.checkValidity()){status.className='status error';status.textContent='Please complete every required field and acceptance checkbox.';form.reportValidity();return} button.disabled=true;button.textContent='Sending…';status.className='status';status.textContent=''; try{const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Submission failed');form.style.display='none';document.getElementById('consentSuccess').classList.add('show')}catch(_){status.className='status error';status.textContent='We could not save your consent. Please check your connection and try again.';button.disabled=false;button.textContent='Sign and complete onboarding'}}); })();
+  </script>
 </body>
 </html>
