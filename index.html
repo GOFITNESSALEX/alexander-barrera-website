@@ -625,7 +625,15 @@
               <div style="display:flex; gap:9px; font-size:16px; line-height:1.45; color:#5c5348;"><span style="color:#48dcff; font-weight:700;">/</span><span>{{ f }}</span></div>
             </sc-for>
           </div>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="margin-top:auto;">
+          <div style="margin-top:auto; margin-bottom:16px; padding:16px; background:#0d1012; color:#f7fafb; border-left:3px solid #48dcff;">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:9px;">
+              <span style="font-size:11px; color:#48dcff; font-weight:700; letter-spacing:.13em; text-transform:uppercase;">{{ t.checkoutLabel }}</span>
+              <span style="font-size:11px; color:#aab4ba; font-weight:700;">PayPal</span>
+            </div>
+            <div style="font-size:14px; line-height:1.45; color:#dce3e7;">{{ t.checkoutDesc }}</div>
+            <div style="margin-top:10px; padding-top:10px; border-top:1px solid #2b3338; color:#aab4ba; font-size:12px;">{{ t.checkoutBilling }}</div>
+          </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_xclick-subscriptions">
             <input type="hidden" name="business" value="ajbzfit@gmail.com">
             <input type="hidden" name="item_name" value="{{ tier.paypalName }}">
@@ -960,7 +968,7 @@ class Component extends DCLogic {
   data() {
     const showPrices = this.props.showPrices !== false;
     const en = {
-      navMethod: 'Method', navCoaching: 'Coaching', navResults: 'Results', apply: 'Get started', applyCta: 'Book a free intro call', popular: 'Most popular', paypalCta: 'Subscribe with PayPal', paypalAria: 'Subscribe to', paypalNote: 'Secure monthly payment via PayPal',
+      navMethod: 'Method', navCoaching: 'Coaching', navResults: 'Results', apply: 'Get started', applyCta: 'Book a free intro call', popular: 'Most popular', paypalCta: 'Continue to secure checkout', paypalAria: 'Subscribe to', paypalNote: 'Secure monthly payment via PayPal', checkoutLabel: 'Order summary', checkoutDesc: 'Live 1:1 coaching, personalized training, nutrition guidance and direct support.', checkoutBilling: 'Monthly subscription · USD · Cancel anytime in PayPal',
       heroKicker: '1:1 Coaching',
       heroTitle: 'STRONG. AESTHETIC. TOGETHER.',
       heroSub: "Most people are training alone, if they're training at all. I coach you 1:1, live on Zoom, every week, building the strong, lean body you actually want. Not an app. Not a script. A real training partner in your corner.",
@@ -1048,7 +1056,7 @@ class Component extends DCLogic {
       fWhyQ: 'Why are you applying for coaching right now?',
     };
     const es = {
-      navMethod: 'Método', navCoaching: 'Coaching', navResults: 'Resultados', apply: 'Empezar', applyCta: 'Agenda tu llamada gratis', popular: 'Más popular', paypalCta: 'Suscribirme con PayPal', paypalAria: 'Suscribirse al plan', paypalNote: 'Pago mensual seguro mediante PayPal',
+      navMethod: 'Método', navCoaching: 'Coaching', navResults: 'Resultados', apply: 'Empezar', applyCta: 'Agenda tu llamada gratis', popular: 'Más popular', paypalCta: 'Continuar al pago seguro', paypalAria: 'Suscribirse al plan', paypalNote: 'Pago mensual seguro mediante PayPal', checkoutLabel: 'Resumen de compra', checkoutDesc: 'Coaching 1:1 en vivo, entrenamiento personalizado, guía nutricional y soporte directo.', checkoutBilling: 'Suscripción mensual · USD · Cancela cuando quieras en PayPal',
       heroKicker: 'Un compañero de entrenamiento a tu lado',
       heroTitle: 'FUERTE. ESTÉTICO. JUNTOS.',
       heroSub: 'La mayoría de las personas entrenan solas, si es que entrenan. Te entreno 1:1, en vivo por Zoom, cada semana, construyendo el cuerpo fuerte y definido que quieres. Nada de apps, nada de guiones: un compañero de entrenamiento real, en tu esquina.',
