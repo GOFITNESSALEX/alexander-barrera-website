@@ -629,6 +629,13 @@
             <input type="hidden" name="cmd" value="_xclick-subscriptions">
             <input type="hidden" name="business" value="ajbzfit@gmail.com">
             <input type="hidden" name="item_name" value="{{ tier.paypalName }}">
+            <input type="hidden" name="item_number" value="{{ tier.paypalId }}">
+            <input type="hidden" name="image_url" value="https://gofitnessalex.com/assets/15f820f8-810e-4522-9963-91e37d3da817.png">
+            <input type="hidden" name="cpp_logo_image" value="https://gofitnessalex.com/assets/15f820f8-810e-4522-9963-91e37d3da817.png">
+            <input type="hidden" name="cpp_headerback_color" value="050607">
+            <input type="hidden" name="cpp_headerborder_color" value="48DCFF">
+            <input type="hidden" name="cpp_payflow_color" value="0D1012">
+            <input type="hidden" name="no_shipping" value="1">
             <input type="hidden" name="currency_code" value="USD">
             <input type="hidden" name="a3" value="{{ tier.amount }}">
             <input type="hidden" name="p3" value="1">
@@ -1152,7 +1159,8 @@ class Component extends DCLogic {
     const tiers = d.tierNames.map((name, i) => ({
       name,
       amount: paypalAmounts[i],
-      paypalName: 'GoFitnessAlex - ' + name + ' - Monthly Coaching',
+      paypalId: 'GFAX-' + (i + 1) + 'X-WEEKLY',
+      paypalName: 'GoFitnessAlex | ' + name + ' | ' + d.tierFreqs[i] + ' | ' + (lang === 'es' ? 'Coaching 1:1, plan personalizado y nutricion' : 'Live 1:1 coaching, custom training and nutrition'),
       freq: d.tierFreqs[i],
       price: d.showPrices ? d.tierPrices[i] : (lang === 'es' ? 'A medida' : 'Custom'),
       per: d.showPrices ? d.per : '',
