@@ -17,20 +17,20 @@
     ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px}li{display:flex;gap:10px;line-height:1.4}li:before{content:"✓";color:#48dcff;font-weight:700}
     .notice{padding:15px 17px;margin-bottom:22px;background:#15191c;border-left:3px solid #48dcff;color:#c7d0d5;font-size:14px;line-height:1.5}
     button{width:100%;cursor:pointer;border:0;padding:18px 20px;background:#48dcff;color:#031014;font-size:15px;font-weight:800;font-style:italic;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 12px 32px rgba(72,220,255,.22)}
-    .secure{text-align:center;margin-top:18px;color:#7f8b91;font-size:12px}.back{display:block;margin-top:18px;text-align:center;color:#aab4ba;font-size:13px}.error{display:none;text-align:center;padding:35px}.error a{color:#48dcff}
+    .langs{display:flex;gap:6px;margin-left:auto}.langs button{width:auto;padding:7px 10px;background:transparent;color:#aab4ba;border:1px solid #354047;box-shadow:none;font-size:11px}.langs button.active{color:#031014;background:#48dcff;border-color:#48dcff}.secure{text-align:center;margin-top:18px;color:#7f8b91;font-size:12px}.back{display:block;margin-top:18px;text-align:center;color:#aab4ba;font-size:13px}.error{display:none;text-align:center;padding:35px}.error a{color:#48dcff}
   </style>
 </head>
 <body>
   <main class="card">
     <div class="bar"></div>
     <div class="inner" id="checkout">
-      <div class="brand"><img src="assets/15f820f8-810e-4522-9963-91e37d3da817.png" alt="GoFitnessAlex"><div><strong>GOFITNESSALEX</strong><span>Coaching online personalizado</span></div></div>
-      <div class="eyebrow">Resumen de tu plan</div>
+      <div class="brand"><img src="assets/15f820f8-810e-4522-9963-91e37d3da817.png" alt="GoFitnessAlex"><div><strong>GOFITNESSALEX</strong><span id="tagline"></span></div><div class="langs"><button type="button" id="langEs">ES</button><button type="button" id="langEn">EN</button></div></div>
+      <div class="eyebrow" id="summaryLabel"></div>
       <h1 class="title" id="name"></h1>
       <div class="freq" id="freq"></div>
-      <div class="price"><strong id="price"></strong><span>/mes · USD</span></div>
+      <div class="price"><strong id="price"></strong><span id="period"></span></div>
       <ul id="features"></ul>
-      <div class="notice">Suscripción mensual mediante PayPal. Podrás administrar o cancelar la renovación de forma segura desde tu cuenta PayPal.</div>
+      <div class="notice" id="notice"></div>
       <form id="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_xclick-subscriptions">
         <input type="hidden" name="business" value="ajbzfit@gmail.com">
@@ -41,29 +41,38 @@
         <input type="hidden" name="return" value="https://gofitnessalex.com/?payment=success">
         <input type="hidden" name="cancel_return" value="https://gofitnessalex.com/#coaching">
         <input type="hidden" name="a3" id="amount"><input type="hidden" name="item_name" id="itemName"><input type="hidden" name="item_number" id="itemNumber">
-        <button type="submit">Continuar al pago seguro →</button>
+        <button type="submit" id="payButton"></button>
       </form>
       <div class="secure">🔒 El pago se completa en el sitio seguro de PayPal</div>
       <a class="back" href="/#coaching">← Ver todos los planes</a>
     </div>
-    <div class="error" id="error">Este enlace de plan no es válido.<br><a href="/#coaching">Ver todos los planes</a></div>
+    <div class="error" id="error"><span id="errorText"></span><br><a href="/#coaching" id="errorBack"></a></div>
   </main>
   <script>
     const plans={
-      inicial:{name:"Inicial",freq:"1 sesión por semana",amount:"150.00",id:"GFAX-1X-WEEKLY",features:["Programa de entrenamiento personalizado","Sesión 1:1 semanal por video","Guía de nutrición","Soporte por chat"]},
-      companero:{name:"Compañero",freq:"2 sesiones por semana",amount:"300.00",id:"GFAX-2X-WEEKLY",features:["Todo lo del plan Inicial","Dos sesiones 1:1 semanales","Revisión continua de técnica","Seguimiento de hábitos"]},
-      compromiso:{name:"Compromiso",freq:"3 sesiones por semana",amount:"450.00",id:"GFAX-3X-WEEKLY",features:["Todo lo del plan Compañero","Tres sesiones 1:1 semanales","Llamada semanal de seguimiento","Soporte prioritario"]},
-      sinlimites:{name:"Sin Límites",freq:"4 sesiones por semana",amount:"600.00",id:"GFAX-4X-WEEKLY",features:["Todo lo del plan Compromiso","Cuatro sesiones 1:1 semanales","Plan de nutrición completo","Chequeos diarios"]}
+      inicial:{es:{name:"Inicial",freq:"1 sesión por semana",features:["Programa de entrenamiento personalizado","Sesión 1:1 semanal por video","Guía de nutrición","Soporte por chat"]},en:{name:"Starter",freq:"1 session per week",features:["Custom training program","Weekly 1:1 video session","Nutrition guidance","Chat support"]},amount:"150.00",id:"GFAX-1X-WEEKLY"},
+      companero:{es:{name:"Compañero",freq:"2 sesiones por semana",features:["Todo lo del plan Inicial","Dos sesiones 1:1 semanales","Revisión continua de técnica","Seguimiento de hábitos"]},en:{name:"Partner",freq:"2 sessions per week",features:["Everything in Starter","Two weekly 1:1 sessions","Ongoing form reviews","Habit tracking"]},amount:"300.00",id:"GFAX-2X-WEEKLY"},
+      compromiso:{es:{name:"Compromiso",freq:"3 sesiones por semana",features:["Todo lo del plan Compañero","Tres sesiones 1:1 semanales","Llamada semanal de seguimiento","Soporte prioritario"]},en:{name:"Committed",freq:"3 sessions per week",features:["Everything in Partner","Three weekly 1:1 sessions","Weekly accountability call","Priority chat support"]},amount:"450.00",id:"GFAX-3X-WEEKLY"},
+      sinlimites:{es:{name:"Sin Límites",freq:"4 sesiones por semana",features:["Todo lo del plan Compromiso","Cuatro sesiones 1:1 semanales","Plan de nutrición completo","Chequeos diarios"]},en:{name:"All In",freq:"4 sessions per week",features:["Everything in Committed","Four weekly 1:1 sessions","Full nutrition planning","Daily check-ins"]},amount:"600.00",id:"GFAX-4X-WEEKLY"}
     };
-    const key=new URLSearchParams(location.search).get("plan"),p=plans[key];
-    if(!p){document.getElementById("checkout").style.display="none";document.getElementById("error").style.display="block"}
-    else{
-      document.title=p.name+" | GoFitnessAlex";
-      document.getElementById("name").textContent=p.name;document.getElementById("freq").textContent=p.freq;document.getElementById("price").textContent="$"+p.amount.replace(".00","");
-      document.getElementById("amount").value=p.amount;document.getElementById("itemNumber").value=p.id;
-      document.getElementById("itemName").value="GoFitnessAlex | "+p.name+" | "+p.freq+" | Coaching 1:1, entrenamiento personalizado y nutrición";
-      const list=document.getElementById("features");p.features.forEach(x=>{const li=document.createElement("li");li.textContent=x;list.appendChild(li)});
+    const copy={
+      es:{tagline:"Coaching online personalizado",summary:"Resumen de tu plan",period:"/mes · USD",notice:"Suscripción mensual mediante PayPal. Podrás administrar o cancelar la renovación de forma segura desde tu cuenta PayPal.",pay:"Continuar al pago seguro →",secure:"🔒 El pago se completa en el sitio seguro de PayPal",back:"← Ver todos los planes",invalid:"Este enlace de plan no es válido.",all:"Ver todos los planes",item:"Coaching 1:1, entrenamiento personalizado y nutrición"},
+      en:{tagline:"Personalized online coaching",summary:"Your plan summary",period:"/month · USD",notice:"Monthly subscription through PayPal. You can securely manage or cancel the renewal from your PayPal account.",pay:"Continue to secure checkout →",secure:"🔒 Payment is completed on PayPal's secure website",back:"← View all plans",invalid:"This plan link is not valid.",all:"View all plans",item:"Live 1:1 coaching, custom training and nutrition"}
+    };
+    const params=new URLSearchParams(location.search),key=params.get("plan"),plan=plans[key];
+    let lang=params.get("lang");if(!["es","en"].includes(lang))lang=(navigator.language||"es").toLowerCase().startsWith("es")?"es":"en";
+    function render(){
+      document.documentElement.lang=lang;
+      const t=copy[lang];["tagline","summaryLabel","period","notice","payButton","secure","back","errorText","errorBack"].forEach(()=>{});
+      document.getElementById("tagline").textContent=t.tagline;document.getElementById("summaryLabel").textContent=t.summary;document.getElementById("period").textContent=t.period;document.getElementById("notice").textContent=t.notice;document.getElementById("payButton").textContent=t.pay;document.getElementById("secure").textContent=t.secure;document.getElementById("back").textContent=t.back;document.getElementById("errorText").textContent=t.invalid;document.getElementById("errorBack").textContent=t.all;
+      document.getElementById("langEs").classList.toggle("active",lang==="es");document.getElementById("langEn").classList.toggle("active",lang==="en");
+      if(!plan){document.getElementById("checkout").style.display="none";document.getElementById("error").style.display="block";return}
+      const p=plan[lang];document.title=p.name+" | GoFitnessAlex";document.getElementById("name").textContent=p.name;document.getElementById("freq").textContent=p.freq;document.getElementById("price").textContent="$"+plan.amount.replace(".00","");
+      document.getElementById("amount").value=plan.amount;document.getElementById("itemNumber").value=plan.id;document.getElementById("itemName").value="GoFitnessAlex | "+p.name+" | "+p.freq+" | "+t.item;
+      const list=document.getElementById("features");list.textContent="";p.features.forEach(x=>{const li=document.createElement("li");li.textContent=x;list.appendChild(li)});
     }
+    function setLang(next){lang=next;const u=new URL(location.href);u.searchParams.set("lang",lang);history.replaceState(null,"",u);render()}
+    document.getElementById("langEs").addEventListener("click",()=>setLang("es"));document.getElementById("langEn").addEventListener("click",()=>setLang("en"));render();
   </script>
 </body>
 </html>
