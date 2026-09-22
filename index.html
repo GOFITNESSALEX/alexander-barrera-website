@@ -625,7 +625,22 @@
               <div style="display:flex; gap:9px; font-size:16px; line-height:1.45; color:#5c5348;"><span style="color:#48dcff; font-weight:700;">/</span><span>{{ f }}</span></div>
             </sc-for>
           </div>
-          <a href="#apply" class="cta-btn" style="margin-top:auto; text-align:center; text-decoration:none; padding:13px; border-radius:24px; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #48dcff;">{{ t.apply }}</a>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="margin-top:auto;">
+            <input type="hidden" name="cmd" value="_xclick-subscriptions">
+            <input type="hidden" name="business" value="ajbzfit@gmail.com">
+            <input type="hidden" name="item_name" value="{{ tier.paypalName }}">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="a3" value="{{ tier.amount }}">
+            <input type="hidden" name="p3" value="1">
+            <input type="hidden" name="t3" value="M">
+            <input type="hidden" name="src" value="1">
+            <input type="hidden" name="no_note" value="1">
+            <input type="hidden" name="charset" value="UTF-8">
+            <input type="hidden" name="return" value="https://gofitnessalex.com/?payment=success">
+            <input type="hidden" name="cancel_return" value="https://gofitnessalex.com/#coaching">
+            <button type="submit" class="cta-btn" aria-label="{{ t.paypalAria }} {{ tier.name }}" style="width:100%; cursor:pointer; text-align:center; padding:13px; border-radius:24px; font-family:inherit; font-weight:700; text-transform:uppercase; letter-spacing:.07em; font-size:13px; background:{{ tier.btnBg }}; color:{{ tier.btnColor }}; border:1px solid #48dcff;">{{ t.paypalCta }}</button>
+          </form>
+          <div style="margin-top:10px; text-align:center; color:#8a7d6d; font-size:12px;">{{ t.paypalNote }}</div>
         </div>
       </sc-for>
     </div>
@@ -938,7 +953,7 @@ class Component extends DCLogic {
   data() {
     const showPrices = this.props.showPrices !== false;
     const en = {
-      navMethod: 'Method', navCoaching: 'Coaching', navResults: 'Results', apply: 'Get started', applyCta: 'Book a free intro call', popular: 'Most popular',
+      navMethod: 'Method', navCoaching: 'Coaching', navResults: 'Results', apply: 'Get started', applyCta: 'Book a free intro call', popular: 'Most popular', paypalCta: 'Subscribe with PayPal', paypalAria: 'Subscribe to', paypalNote: 'Secure monthly payment via PayPal',
       heroKicker: '1:1 Coaching',
       heroTitle: 'STRONG. AESTHETIC. TOGETHER.',
       heroSub: "Most people are training alone, if they're training at all. I coach you 1:1, live on Zoom, every week, building the strong, lean body you actually want. Not an app. Not a script. A real training partner in your corner.",
@@ -1026,7 +1041,7 @@ class Component extends DCLogic {
       fWhyQ: 'Why are you applying for coaching right now?',
     };
     const es = {
-      navMethod: 'Método', navCoaching: 'Coaching', navResults: 'Resultados', apply: 'Empezar', applyCta: 'Agenda tu llamada gratis', popular: 'Más popular',
+      navMethod: 'Método', navCoaching: 'Coaching', navResults: 'Resultados', apply: 'Empezar', applyCta: 'Agenda tu llamada gratis', popular: 'Más popular', paypalCta: 'Suscribirme con PayPal', paypalAria: 'Suscribirse al plan', paypalNote: 'Pago mensual seguro mediante PayPal',
       heroKicker: 'Un compañero de entrenamiento a tu lado',
       heroTitle: 'FUERTE. ESTÉTICO. JUNTOS.',
       heroSub: 'La mayoría de las personas entrenan solas, si es que entrenan. Te entreno 1:1, en vivo por Zoom, cada semana, construyendo el cuerpo fuerte y definido que quieres. Nada de apps, nada de guiones: un compañero de entrenamiento real, en tu esquina.',
@@ -1133,8 +1148,11 @@ class Component extends DCLogic {
     const lang = this.L();
     const d = this.data();
     const featured = 1;
+    const paypalAmounts = ['150.00', '300.00', '450.00', '600.00'];
     const tiers = d.tierNames.map((name, i) => ({
       name,
+      amount: paypalAmounts[i],
+      paypalName: 'GoFitnessAlex - ' + name + ' - Monthly Coaching',
       freq: d.tierFreqs[i],
       price: d.showPrices ? d.tierPrices[i] : (lang === 'es' ? 'A medida' : 'Custom'),
       per: d.showPrices ? d.per : '',
